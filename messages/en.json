@@ -1,0 +1,275 @@
+{
+  "_meta": {
+    "status": "DRAFT — every string below is placeholder copy written from confirmed product facts only. Nothing here is client-approved. No certification, statistic, customer name or superlative appears anywhere by design.",
+    "unresolved": "Legal entity name, production domain, financing live-vs-coming-soon, Mawarid Finance public-naming approval, contact form fields and submission destination."
+  },
+  "meta": {
+    "title": "Maghanim — Shariah-compliant business platform for UAE SMEs",
+    "description": "Payments, cards, business management and financing for small and medium enterprises in the United Arab Emirates. One platform, one contract, one relationship manager.",
+    "ogAlt": "Maghanim"
+  },
+  "nav": {
+    "home": "Home",
+    "solutions": "Solutions",
+    "governance": "Governance",
+    "contact": "Contact",
+    "switchTo": "العربية",
+    "switchLabel": "Switch to Arabic",
+    "menu": "Menu",
+    "close": "Close menu",
+    "skip": "Skip to main content"
+  },
+  "hero": {
+    "headline": "One platform for Shariah-compliant business",
+    "sub": "The card machines, the company cards, the books and the financing — on one contract, with one person to call.",
+    "cta": "Get in contact",
+    "ctaSecondary": "Explore solutions",
+    "markAlt": "Maghanim",
+    "coinAlt": ""
+  },
+  "platform": {
+    "title": "A single platform for the SME economy",
+    "body": "Maghanim is not a payment service provider with additional products attached. It is an integrated commerce platform on which an SME can accept payment, issue cards, manage travel and expense, run its business software and access Shariah-compliant finance — without stitching together four vendors.",
+    "pillars": {
+      "payments": {
+        "title": "Payments and acquiring",
+        "desc": "Merchant acquiring, gateway and APIs, POS and contactless, mobile wallet, cross-border remittance.",
+        "partner": "Arab Financial Services"
+      },
+      "cards": {
+        "title": "Cards and expense",
+        "desc": "Islamic debit, credit and prepaid cards, Card-as-a-Service, corporate expense and supplier payments.",
+        "partner": "Mawarid Finance"
+      },
+      "business": {
+        "title": "Business management",
+        "desc": "Odoo ERP, accounting and payroll, CRM and inventory, HR and business automation.",
+        "partner": "Certified Odoo partner"
+      },
+      "financing": {
+        "title": "Embedded finance",
+        "desc": "Working capital, Murabaha-based SME finance and blended finance structures.",
+        "partner": "Coming soon"
+      }
+    },
+    "attributionLabel": "Provided with"
+  },
+  "explorer": {
+    "title": "One platform, four capability groups",
+    "hint": "Select a capability group",
+    "payments": {
+      "label": "Payments and acquiring",
+      "headline": "Accept payment wherever the business happens",
+      "body": "One merchant relationship covering the shop floor, the phone, the checkout page and the invoice.",
+      "features": [
+        "Merchant acquiring",
+        "Payment gateway and APIs",
+        "Mobile wallet and P2P transfer",
+        "POS and contactless",
+        "Cross-border remittance",
+        "Multi-currency and FX"
+      ],
+      "partner": "Arab Financial Services and Flocash Ltd"
+    },
+    "cards": {
+      "label": "Cards and expense",
+      "headline": "Issue, control and reconcile company spend",
+      "body": "Cards for the staff who need them, issued on partner rails, with limits set and spend visible at card level.",
+      "features": [
+        "Islamic debit, credit and prepaid cards",
+        "Card-as-a-Service",
+        "Corporate expense management",
+        "B2B corporate travel payment",
+        "Virtual card issuance",
+        "Supplier payments"
+      ],
+      "partner": "Mawarid Finance and Arab Financial Services"
+    },
+    "business": {
+      "label": "Business management",
+      "headline": "Run the back office on one system",
+      "body": "The operational software an SME needs, implemented and supported by the same people who handle the payments.",
+      "features": [
+        "Odoo ERP implementation",
+        "Accounting and payroll",
+        "CRM and inventory",
+        "HR and business automation",
+        "Digital business analytics",
+        "Merchant commerce platform"
+      ],
+      "partner": "Odoo, as a certified partner"
+    },
+    "financing": {
+      "label": "Embedded finance",
+      "headline": "Working capital at the point of need",
+      "body": "Finance originated on real payment data rather than filed accounts, structured to comply from inception.",
+      "features": [
+        "Working capital solutions",
+        "Murabaha-based SME finance",
+        "Blended finance structures",
+        "Trade finance (roadmap)",
+        "SME Sukuk solutions (roadmap)",
+        "Insurance and Takaful referral"
+      ],
+      "note": "Development stage",
+      "partner": "An Islamic banking partner, in advanced discussion"
+    },
+    "attribution": "Provided with",
+    "intro": "Turn the dial. Maghanim carries the SME relationship and the Shariah governance; each regulated capability is supplied by the licensed institution named beneath it.",
+    "next": "Next capability group"
+  },
+  "how": {
+    "title": "How B2B travel settlement works",
+    "body": "A five-step flow that replaces cash, deposits and guarantees with a controlled, single-use card payment.",
+    "steps": {
+      "onboard": {
+        "label": "Onboard",
+        "desc": "The travel business is registered and its corporate account is opened."
+      },
+      "fund": {
+        "label": "Fund",
+        "desc": "The wallet is loaded using local payment methods or a linked bank account."
+      },
+      "issue": {
+        "label": "Issue",
+        "desc": "A single-use virtual card is issued against the funded balance."
+      },
+      "book": {
+        "label": "Book",
+        "desc": "The booking is completed with the virtual card through existing channels."
+      },
+      "settle": {
+        "label": "Settle",
+        "desc": "The supplier is paid immediately and settled by its existing acquirer."
+      }
+    },
+    "outcomeLabel": "Outcome",
+    "outcome": "The supplier receives cleared funds immediately and carries no counterparty credit risk. The travel business releases the capital previously tied up in deposits and guarantees, and gains transaction-level expense control it did not have under cash settlement."
+  },
+  "partners": {
+    "title": "Built on regulated infrastructure",
+    "body": "Maghanim does not seek to replicate licensed banking or processing infrastructure. It integrates it. Each partner supplies a regulated capability; Maghanim supplies the SME relationship, the product design and the Shariah governance layer.",
+    "logoPending": "Logo to follow",
+    "items": {
+      "flocash": {
+        "name": "Flocash Ltd",
+        "role": "Technology partner",
+        "supplies": "Unified commerce and payment platform, ERP and CRM integration, supplier payments, corporate travel solutions",
+        "status": "Contracted"
+      },
+      "mawarid": {
+        "name": "Mawarid Finance",
+        "role": "Banking-as-a-Service partner",
+        "supplies": "BIN sponsorship, card issuing, merchant acquiring, Card-as-a-Service",
+        "status": "Contracted"
+      },
+      "afs": {
+        "name": "Arab Financial Services",
+        "role": "Payment solutions provider",
+        "supplies": "Card processing and issuing, merchant acquiring, open banking, fraud and risk management, SoftPOS",
+        "status": "Contracted"
+      },
+      "odoo": {
+        "name": "Odoo",
+        "role": "Digital transformation partner",
+        "supplies": "Certified ERP, accounting, CRM, payroll, inventory, HR and business automation",
+        "status": "Certified partner"
+      }
+    }
+  },
+  "governance": {
+    "title": "Governance, compliance and operating model",
+    "body": "Maghanim is a Dubai-based entity under a regional holding structure, with independent Shariah oversight of product design and disclosure.",
+    "link": "More on governance",
+    "columns": {
+      "corporate": {
+        "title": "Corporate governance",
+        "items": [
+          "Dubai-based entity under a regional holding structure",
+          "Board of Directors with defined committee mandates",
+          "Independent Shariah Supervisory Board",
+          "Business Advisory Board of international specialists",
+          "Annual governance review and ESG subcommittee"
+        ]
+      },
+      "compliance": {
+        "title": "Compliance framework",
+        "items": [
+          "Shariah governance over product design and disclosure",
+          "Payment card industry data security standards",
+          "Information security management standards",
+          "Anti-money-laundering and know-your-customer controls",
+          "Encryption, fraud detection and independent audit"
+        ]
+      },
+      "operating": {
+        "title": "Operating model",
+        "items": [
+          "Lean, cloud-based and technology-driven",
+          "Digital onboarding with AI-assisted customer support",
+          "Non-core operations outsourced",
+          "Internal focus on sales, partnerships and product",
+          "Direct B2B sales with industry relationship managers"
+        ]
+      }
+    },
+    "engagementLabel": "Industry engagement",
+    "engagement": "Engagement with AAOIFI, the Islamic Financial Services Board and CIBAFI on standards, governance practice and market development."
+  },
+  "contact": {
+    "title": "Start with one conversation",
+    "body": "Tell us what the business runs on today — the terminals, the cards, the accounting, whoever handles the financing. A relationship manager will come back to arrange a meeting.",
+    "fields": {
+      "name": "Full name",
+      "company": "Company",
+      "email": "Work email",
+      "phone": "Phone",
+      "message": "What are you using today?"
+    },
+    "optional": "Optional",
+    "submit": "Get in contact",
+    "sending": "Sending…",
+    "success": "Thank you. A relationship manager will be in touch.",
+    "error": "Something went wrong. Please try again, or email us directly.",
+    "required": "This field is required",
+    "invalidEmail": "Enter a valid email address"
+  },
+  "footer": {
+    "nav": "Site",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use",
+    "location": "Dubai, United Arab Emirates",
+    "entity": "Maghanim for Payment LLC",
+    "rights": "All rights reserved.",
+    "partners": "In partnership with Flocash Ltd, Mawarid Finance, Arab Financial Services and Odoo."
+  },
+  "notFound": {
+    "title": "This page does not exist",
+    "body": "The page you were looking for is not here.",
+    "cta": "Return home"
+  },
+  "pages": {
+    "solutions": {
+      "title": "Everything the business runs on, under one contract",
+      "body": "Four areas, one platform and one relationship manager. Each area names the licensed institution that provides the regulated service behind it.",
+      "note": "[PLACEHOLDER: confirm whether Solutions is one page with four sections, as built here, or four separate pages]"
+    },
+    "governance": {
+      "title": "Independent Shariah oversight",
+      "body": "Maghanim provides the relationship, the product design and the Shariah governance. The regulated services are provided by licensed partners.",
+      "placeholder": "[PLACEHOLDER: confirm the content of the Governance page — board composition, review cadence, and what may be named publicly]"
+    },
+    "contact": {
+      "title": "Start with one conversation"
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "body": "[PLACEHOLDER: privacy policy to be supplied]"
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "body": "[PLACEHOLDER: terms of use to be supplied]"
+    }
+  }
+}

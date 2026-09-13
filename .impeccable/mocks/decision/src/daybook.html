@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&family=Archivo+Narrow:wght@400..700&family=Petrona:ital,wght@0,300..600;1,300..600&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--stock:#E4E9E0;--rule:#B6C0B3;--oxide:#A8321E;--ink:#14181A;--gold:#BE973A;--row:38px}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--stock);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;
+  font-variant-numeric:tabular-nums;display:flex;flex-direction:column}
+
+header{height:78px;flex:none;display:flex;align-items:center;justify-content:space-between;
+  padding:0 44px;border-bottom:2.5px solid var(--oxide);background:var(--stock);position:relative;z-index:3}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img.mark{height:40px;display:block}
+.brand img.word{height:14px;display:block;margin-top:2px}
+nav{display:flex;align-items:center;gap:34px}
+nav a{font-family:"Archivo Narrow";font-weight:600;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.7}
+nav a.on{opacity:1;border-bottom:2px solid var(--gold);padding-bottom:3px}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;opacity:.7;
+  border-left:1px solid var(--rule);padding-left:30px}
+
+main{flex:1;display:grid;grid-template-columns:1fr 386px;min-height:0}
+
+.sheet{position:relative;padding:0 44px;overflow:hidden;
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--row) - 1px),var(--rule) calc(var(--row) - 1px),var(--rule) var(--row))}
+.sheet::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:
+    linear-gradient(to right,transparent 0 88px,rgba(168,50,30,.85) 88px 89px,transparent 89px),
+    linear-gradient(to right,transparent 0 95px,rgba(168,50,30,.85) 95px 96px,transparent 96px)}
+
+.hl{padding-top:var(--row);margin-left:122px}
+.hl h1{font-family:"Archivo";font-variation-settings:"wdth" 76,"wght" 790;
+  font-size:92px;line-height:76px;letter-spacing:-.015em;text-transform:uppercase}
+.hl h1 span{display:block}
+.hl h1 .b{color:var(--oxide)}
+.hl p{margin-top:calc(var(--row) - 10px);font-size:16px;line-height:var(--row);max-width:46ch;color:#3C443E}
+
+.entries{margin-left:122px;margin-top:calc(var(--row) * .5)}
+.chead{display:grid;grid-template-columns:46px 1fr 250px;align-items:end;height:var(--row);
+  font-family:"Archivo Narrow";font-weight:700;font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:#78837A}
+.chead span:last-child{text-align:right}
+.e{display:grid;grid-template-columns:46px 1fr 250px;align-items:center;height:57px;
+  border-bottom:1px solid rgba(20,24,26,.18)}
+.e .n{font-size:13px;color:#78837A}
+.e .t{font-family:"Archivo Narrow";font-weight:700;font-size:20px;letter-spacing:.055em;text-transform:uppercase}
+.e .m{text-align:right;font-family:"Petrona";font-style:italic;font-size:17px;color:#4A5450}
+.e .m em{color:var(--oxide)}
+.e.soon .t{color:#6E7972}
+
+.gov{position:absolute;left:0;right:0;bottom:0;height:156px;padding:22px 44px 0 166px;
+  border-top:1.5px solid var(--oxide);background:linear-gradient(to bottom,rgba(228,233,224,.86),var(--stock) 40%)}
+.gov .k{font-family:"Archivo Narrow";font-weight:700;font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;color:#78837A;margin-bottom:9px}
+.gov p{font-family:"Petrona";font-size:20px;line-height:1.42;max-width:62ch;color:#26302B}
+.gov .lnk{margin-top:13px;font-family:"Archivo Narrow";font-weight:700;font-size:11.5px;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--oxide)}
+
+.bal{background:var(--oxide);color:#F3EDE4;position:relative;display:flex;flex-direction:column;
+  padding:36px 40px 40px;overflow:hidden}
+.bal::before{content:"";position:absolute;inset:0;opacity:.12;
+  background-image:repeating-linear-gradient(to bottom,transparent 0,transparent calc(var(--row) - 1px),#F3EDE4 calc(var(--row) - 1px),#F3EDE4 var(--row))}
+.bal>*{position:relative}
+.bal .k{font-family:"Archivo Narrow";font-weight:700;font-size:10px;letter-spacing:.22em;
+  text-transform:uppercase;opacity:.72}
+.bal .fig{font-family:"Archivo";font-variation-settings:"wdth" 78,"wght" 700;
+  font-size:124px;line-height:.88;margin-top:12px;letter-spacing:-.02em}
+.bal .fig small{font-size:44px;opacity:.5;padding:0 14px;vertical-align:.2em}
+.bal .cap{margin-top:18px;font-size:15px;line-height:1.6;opacity:.93;max-width:25ch}
+.bal hr{border:0;border-top:1px solid rgba(243,237,228,.32);margin:24px 0}
+.bal .fine{font-size:13px;line-height:1.62;opacity:.68;max-width:30ch}
+.bal .sp{flex:1}
+.cta{display:flex;align-items:center;justify-content:space-between;gap:18px;background:var(--gold);
+  color:#1B1204;text-decoration:none;font-family:"Archivo Narrow";font-weight:700;font-size:15px;
+  letter-spacing:.13em;text-transform:uppercase;padding:19px 22px}
+.cta .ar{font-size:12px;opacity:.55;font-family:"Noto Kufi Arabic";letter-spacing:0}
+.bal .foot{margin-top:15px;font-family:"Archivo Narrow";font-size:10.5px;letter-spacing:.17em;
+  text-transform:uppercase;opacity:.6}
+</style></head><body>
+
+<header>
+  <div class="brand">
+    <img class="mark" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+    <img class="word" src="../../../../public/brand/wordmark-black-tight.svg" alt="Maghanim">
+  </div>
+  <nav>
+    <a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+    <span class="ar">العربية</span>
+  </nav>
+</header>
+
+<main>
+  <section class="sheet">
+    <div class="hl">
+      <h1><span>Four vendors.</span><span class="b">One contract.</span></h1>
+      <p>Payments, cards, business management and financing entered in a single book — one relationship manager and one support line behind every row.</p>
+    </div>
+
+    <div class="entries">
+      <div class="chead"><span>No.</span><span>Entered under</span><span>Licence held by</span></div>
+      <div class="e"><span class="n">01</span><span class="t">Payments &amp; acceptance</span><span class="m">via Arab Financial Services</span></div>
+      <div class="e"><span class="n">02</span><span class="t">Cards &amp; spend</span><span class="m">via Mawarid Finance</span></div>
+      <div class="e"><span class="n">03</span><span class="t">Business management</span><span class="m">certified Odoo partner</span></div>
+      <div class="e soon"><span class="n">04</span><span class="t">Financing</span><span class="m"><em>coming soon</em></span></div>
+    </div>
+
+    <div class="gov">
+      <div class="k">Carried forward</div>
+      <p>Maghanim does not hold the licences. It holds the governance — and puts the name of the institution that does beside every line.</p>
+      <div class="lnk">Read the governance note →</div>
+    </div>
+  </section>
+
+  <aside class="bal">
+    <div class="k">Balance carried forward</div>
+    <div class="fig">4<small>→</small>1</div>
+    <div class="cap">Four supplier relationships reconcile to one contract, one invoice, one conversation.</div>
+    <hr>
+    <div class="fine">Maghanim holds the relationship, the product design and the Shariah governance. Licensed partners hold the regulated rails.</div>
+    <div class="sp"></div>
+    <a class="cta" href="#">Request a meeting <span class="ar">تواصل معنا</span></a>
+    <div class="foot">Dubai · United Arab Emirates</div>
+  </aside>
+</main>
+</body></html>

@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Archivo:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--em:#0A3340;--gold:#BE973A;--goldl:#D4AF5A;--cream:#F5F0E8}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--em);color:var(--cream);font-family:"Archivo",system-ui,sans-serif;
+  display:flex;flex-direction:column;position:relative;
+  background:radial-gradient(ellipse 70% 62% at 50% 44%,#0F4354 0%,var(--em) 50%,#05202B 100%),var(--em)}
+
+/* the seal: one large medallion of pattern behind the mark */
+.seal{position:absolute;left:50%;top:452px;transform:translate(-50%,-50%);width:806px;height:806px;pointer-events:none}
+.seal .ring{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(190,151,58,.30)}
+.seal .ring.r2{inset:52px;border-color:rgba(190,151,58,.22)}
+.seal .ring.r3{inset:104px;border-color:rgba(190,151,58,.15)}
+.seal .tick{position:absolute;inset:16px;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,rgba(190,151,58,.36) 0deg .28deg,transparent .28deg 3deg);
+  -webkit-mask:radial-gradient(circle,transparent 0 48.4%,#000 48.6% 50%,transparent 50%)}
+.seal .fill{position:absolute;inset:104px;border-radius:50%;opacity:.30;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='132' height='132' viewBox='0 0 132 132'><g fill='none' stroke='%23BE973A' stroke-width='.9'><path d='M66 0 L132 66 L66 132 L0 66 Z'/><path d='M66 21 L111 66 L66 111 L21 66 Z'/><rect x='31' y='31' width='70' height='70'/><rect x='31' y='31' width='70' height='70' transform='rotate(45 66 66)'/><circle cx='66' cy='66' r='24'/></g></svg>");
+  -webkit-mask-image:radial-gradient(circle,transparent 0 34%,rgba(0,0,0,.55) 46%,#000 62%,transparent 97%)}
+
+header{position:relative;z-index:5;height:86px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img.mark{height:38px;display:block}
+.brand img.word{height:12.5px;display:block;margin-top:2px}
+nav{display:flex;align-items:center;gap:36px}
+nav a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;opacity:.76;font-weight:500}
+nav a.on{opacity:1;color:var(--goldl);border-bottom:1.5px solid var(--goldl);padding-bottom:5px}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;opacity:.76;padding-left:26px;border-left:1px solid rgba(245,240,232,.22)}
+
+.center{position:relative;z-index:5;flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;padding-bottom:96px}
+.center img.mk{height:104px;display:block;margin-bottom:38px}
+.center h1{font-family:"Playfair Display";font-weight:500;font-size:64px;line-height:1.12;letter-spacing:-.012em;max-width:18ch}
+.center h1 em{font-style:italic;color:var(--goldl)}
+.center p{margin-top:24px;font-size:17px;line-height:1.7;color:rgba(245,240,232,.72);max-width:50ch}
+.cta{margin-top:40px;display:inline-flex;align-items:baseline;gap:14px;background:var(--gold);color:var(--em);
+  text-decoration:none;font-size:14.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;
+  padding:19px 44px;border-radius:999px;box-shadow:0 14px 34px rgba(0,0,0,.38)}
+.cta .ar{font-family:"Noto Kufi Arabic";font-size:12px;letter-spacing:0;opacity:.55}
+
+/* proof as text, not object */
+.proof{position:relative;z-index:5;flex:none;height:108px;border-top:1px solid rgba(190,151,58,.28);
+  display:flex;align-items:center;justify-content:space-between;padding:0 64px;
+  background:linear-gradient(to bottom,rgba(5,32,43,0),rgba(5,32,43,.55))}
+.proof .k{font-size:10px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);
+  max-width:150px;line-height:1.9}
+.names{display:flex;align-items:center;gap:0}
+.names span{font-family:"Playfair Display";font-size:21px;color:rgba(245,240,232,.9);padding:0 34px;
+  border-left:1px solid rgba(245,240,232,.16)}
+.names span:first-child{border-left:0;padding-left:0}
+.names span small{display:block;font-family:"Archivo";font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;
+  color:rgba(245,240,232,.42);margin-top:6px}
+.proof .lnk{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(245,240,232,.66);
+  text-decoration:none;border-bottom:1px solid rgba(245,240,232,.3);padding-bottom:4px}
+</style></head><body>
+<div class="seal"><div class="ring"></div><div class="ring r2"></div><div class="ring r3"></div>
+  <div class="tick"></div><div class="fill"></div></div>
+
+<header>
+  <div class="brand"><img class="mark" src="../../../public/brand/mark-gold-tight.svg" alt="">
+    <img class="word" src="../../../public/brand/wordmark-white-tight.svg" alt="Maghanim"></div>
+  <nav><a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+    <span class="ar">العربية</span></nav>
+</header>
+
+<div class="center">
+  <img class="mk" src="../../../public/brand/mark-gold-tight.svg" alt="">
+  <h1>One platform, governed to <em>the letter.</em></h1>
+  <p>Payments, cards, business management and financing for UAE small and medium enterprises — one contract, one relationship manager, independent Shariah oversight.</p>
+  <a class="cta" href="#">Request a meeting <span class="ar">تواصل معنا</span></a>
+</div>
+
+<div class="proof">
+  <div class="k">Licensed<br>partners</div>
+  <div class="names">
+    <span>Flocash<small>Technology</small></span>
+    <span>Mawarid Finance<small>Banking as a service</small></span>
+    <span>Arab Financial Services<small>Payment solutions</small></span>
+    <span>Odoo<small>Certified ERP partner</small></span>
+  </div>
+  <a class="lnk" href="#">Governance →</a>
+</div>
+</body></html>

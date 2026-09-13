@@ -1,0 +1,116 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Archivo:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--em:#0A3340;--em2:#13707A;--gold:#BE973A;--goldl:#D4AF5A;--cream:#F5F0E8;--ink:#0A3340;--body:#3A3A3A}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--em);color:var(--cream);font-family:"Archivo",system-ui,sans-serif;display:flex;flex-direction:column}
+.pat{position:absolute;inset:0;opacity:.08;pointer-events:none;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'><g fill='none' stroke='%23BE973A' stroke-width='1'><path d='M75 0 L150 75 L75 150 L0 75 Z'/><path d='M75 24 L126 75 L75 126 L24 75 Z'/><rect x='36' y='36' width='78' height='78'/><rect x='36' y='36' width='78' height='78' transform='rotate(45 75 75)'/><circle cx='75' cy='75' r='27'/></g></svg>")}
+
+/* hero 70% */
+.hero{position:relative;height:636px;flex:none;overflow:hidden;
+  background:radial-gradient(ellipse 80% 74% at 22% 34%,#12475700 0%,var(--em) 58%,#062430 100%),var(--em)}
+.hero .pat{-webkit-mask-image:linear-gradient(105deg,#000 0 46%,rgba(0,0,0,.35) 70%,transparent 100%)}
+header{position:relative;z-index:3;height:84px;display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img.mark{height:38px;display:block}
+.brand img.word{height:12.5px;display:block;margin-top:2px}
+nav{display:flex;align-items:center;gap:36px}
+nav a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);text-decoration:none;opacity:.76;font-weight:500}
+nav a.on{opacity:1;color:var(--goldl);border-bottom:1.5px solid var(--goldl);padding-bottom:5px}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;opacity:.76;padding-left:26px;border-left:1px solid rgba(245,240,232,.22)}
+
+.hgrid{position:relative;z-index:3;display:grid;grid-template-columns:1fr 620px;height:552px;padding:0 64px;align-items:center}
+.copy img.mk{height:62px;display:block;margin-bottom:26px}
+.copy h1{font-family:"Playfair Display";font-weight:500;font-size:66px;line-height:1.1;letter-spacing:-.012em;max-width:15ch}
+.copy h1 em{font-style:italic;color:var(--goldl)}
+.copy p{margin-top:22px;font-size:17px;line-height:1.68;color:rgba(245,240,232,.74);max-width:46ch}
+.acts{margin-top:36px;display:flex;align-items:center;gap:32px}
+.cta{display:inline-flex;align-items:baseline;gap:14px;background:var(--gold);color:var(--em);text-decoration:none;
+  font-size:14.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;padding:18px 38px;border-radius:999px;
+  box-shadow:0 12px 30px rgba(0,0,0,.34)}
+.cta .ar{font-family:"Noto Kufi Arabic";font-size:12px;letter-spacing:0;opacity:.55}
+.alt{font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:rgba(245,240,232,.62);text-decoration:none;
+  border-bottom:1px solid rgba(245,240,232,.28);padding-bottom:4px}
+
+.coinstage{position:relative;height:100%;display:flex;align-items:center;justify-content:flex-end}
+.coin{position:relative;width:470px;height:470px;transform:rotate(-8deg);margin-right:-108px}
+.coin .mill{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.coin .mill::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,#6E5219 0deg .6deg,#EFD79B .6deg 1.2deg)}
+.coin .mill::after{content:"";position:absolute;inset:16px;border-radius:50%;
+  background:radial-gradient(ellipse 70% 62% at 34% 26%,#FBF0CE 0%,#E9D294 22%,#D0A94F 52%,#AE8631 80%,#836316 100%);
+  box-shadow:0 0 0 1px rgba(110,82,25,.7),inset 0 4px 10px rgba(255,248,223,.55),inset 0 -8px 18px rgba(92,68,16,.5)}
+.coin .face{position:absolute;inset:46px;border-radius:50%;border:2px solid rgba(122,93,29,.5);
+  box-shadow:inset 0 3px 8px rgba(96,71,18,.45),inset 0 -3px 8px rgba(255,247,219,.4)}
+.coin .mk{position:absolute;left:50%;top:50%;width:250px;transform:translate(-50%,-50%)}
+.coin .mk img{width:100%;display:block}
+.coin .mk img.sh,.coin .mk img.hi{display:none}
+.coin .mk img.bs{filter:brightness(1.06) saturate(.85)
+  drop-shadow(-1.5px -2px 0 rgba(255,251,230,.9))
+  drop-shadow(2px 2.5px 0 rgba(96,71,18,.85))
+  drop-shadow(3px 4px 3px rgba(70,50,10,.45))}
+.coin .gloss{position:absolute;inset:0;border-radius:50%;
+  background:linear-gradient(128deg,rgba(255,252,240,.42) 0%,rgba(255,255,255,0) 36%,rgba(255,255,255,0) 68%,rgba(255,244,214,.14) 100%)}
+.coin .sh{position:absolute;left:50%;bottom:-30px;transform:translateX(-50%);width:72%;height:26px;border-radius:50%;
+  background:radial-gradient(ellipse,rgba(0,0,0,.5),transparent 70%)}
+
+/* pillar band */
+.band{flex:1;position:relative;background:var(--cream);color:var(--ink);padding:0 64px;display:flex;align-items:center}
+.band .pat{opacity:.12;-webkit-mask-image:linear-gradient(to bottom,#000 0 62%,transparent 100%)}
+.cols{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);width:100%;gap:0}
+.col{padding:0 30px;border-left:1px solid rgba(10,51,64,.16)}
+.col:first-child{padding-left:0;border-left:0}
+.col:last-child{padding-right:0}
+.col .n{font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--gold);margin-bottom:11px}
+.col h3{font-family:"Playfair Display";font-weight:500;font-size:23px;color:var(--ink);margin-bottom:7px}
+.col p{font-size:13.5px;line-height:1.55;color:var(--body)}
+.col .att{margin-top:11px;font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:#7A7468}
+.col.soon .att{color:#A8321E}
+</style></head><body>
+<div class="hero">
+  <div class="pat"></div>
+  <header>
+    <div class="brand"><img class="mark" src="../../../public/brand/mark-gold-tight.svg" alt="">
+      <img class="word" src="../../../public/brand/wordmark-white-tight.svg" alt="Maghanim"></div>
+    <nav><a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+      <span class="ar">العربية</span></nav>
+  </header>
+  <div class="hgrid">
+    <div class="copy">
+      <img class="mk" src="../../../public/brand/mark-gold-tight.svg" alt="">
+      <h1>Four vendors, replaced by <em>one contract.</em></h1>
+      <p>Payments, cards, business management and financing for UAE small and medium enterprises — Shariah-governed, on one platform, with one relationship manager.</p>
+      <div class="acts">
+        <a class="cta" href="#">Request a meeting <span class="ar">تواصل معنا</span></a>
+        <a class="alt" href="#">Explore solutions</a>
+      </div>
+    </div>
+    <div class="coinstage"><div class="coin">
+      <div class="mill"></div><div class="face"></div>
+      <div class="mk"><img class="sh" src="../../../public/brand/mark-gold-tight.svg" alt="">
+        <img class="hi" src="../../../public/brand/mark-gold-tight.svg" alt="">
+        <img class="bs" src="../../../public/brand/mark-gold-tight.svg" alt=""></div>
+      <div class="gloss"></div></div></div>
+  </div>
+</div>
+
+<div class="band"><div class="pat"></div>
+  <div class="cols">
+    <div class="col"><div class="n">01</div><h3>Payments &amp; acceptance</h3>
+      <p>POS, tap-to-phone, online gateway, payment links, wallet acceptance.</p>
+      <div class="att">Arab Financial Services</div></div>
+    <div class="col"><div class="n">02</div><h3>Cards &amp; spend</h3>
+      <p>Islamic cards, virtual cards, expense control, B2B travel.</p>
+      <div class="att">Mawarid Finance</div></div>
+    <div class="col"><div class="n">03</div><h3>Business management</h3>
+      <p>Accounting, payroll, CRM, inventory and HR on Odoo.</p>
+      <div class="att">Certified Odoo partner</div></div>
+    <div class="col soon"><div class="n">04</div><h3>Financing</h3>
+      <p>Shariah-compliant working capital.</p>
+      <div class="att">Coming soon</div></div>
+  </div>
+</div>
+</body></html>

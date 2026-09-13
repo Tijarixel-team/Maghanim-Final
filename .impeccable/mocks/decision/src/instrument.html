@@ -1,0 +1,150 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:wght@400..700&family=Libre+Franklin:wght@400;600;800&family=Libre+Caslon+Text:ital@0;1&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--paper:#FAF8F4;--violet:#3B2A6B;--gold:#BE973A;--ink:#14181A;--hair:#CFC9C0;--tint:#EDE9F4}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--paper);color:var(--ink);font-family:"Libre Franklin",system-ui,sans-serif;
+  display:flex;flex-direction:column;position:relative}
+/* security tint in the outer margins */
+body::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:
+    repeating-linear-gradient(48deg,var(--tint) 0 2px,transparent 2px 9px),
+    repeating-linear-gradient(-48deg,var(--tint) 0 2px,transparent 2px 9px);
+  -webkit-mask-image:linear-gradient(to right,#000 0 62px,transparent 62px calc(100% - 62px),#000 calc(100% - 62px) 100%);
+  opacity:.85}
+.pg{position:relative;z-index:1;flex:1;margin:0 62px;background:var(--paper);
+  border-left:1px solid var(--hair);border-right:1px solid var(--hair);
+  padding:0 54px;display:flex;flex-direction:column}
+
+/* title block */
+.title{border-bottom:3px double var(--ink);padding:20px 0 15px;display:flex;align-items:center;
+  justify-content:space-between}
+.tb{display:flex;align-items:center;gap:16px}
+.tb img.mark{height:36px;display:block}
+.tb img.word{height:14px;display:block;margin-top:3px}
+.meta{text-align:right;font-family:"Archivo Narrow";font-size:10.5px;letter-spacing:.2em;
+  text-transform:uppercase;color:#6B6659;line-height:1.9}
+.meta .ar{font-family:"Noto Kufi Arabic";letter-spacing:0;font-size:12px;color:var(--violet)}
+nav{display:flex;gap:30px;align-items:center;padding:11px 0;border-bottom:1px solid var(--hair)}
+nav a{font-family:"Archivo Narrow";font-weight:600;font-size:11.5px;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.72}
+nav a.on{opacity:1;color:var(--violet);border-bottom:2px solid var(--gold);padding-bottom:2px}
+nav .sp{flex:1}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;color:var(--violet);opacity:.9}
+
+/* subject */
+.subject{padding:16px 0 12px;display:grid;grid-template-columns:1fr 330px;gap:46px;align-items:end}
+.subject .k{font-family:"Archivo Narrow";font-weight:700;font-size:10px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--violet);margin-bottom:12px}
+.subject h1{font-family:"Libre Franklin";font-weight:800;font-size:36px;line-height:1.07;
+  letter-spacing:-.028em}
+.subject h1 em{font-style:normal;color:var(--violet)}
+.subject .note{font-family:"Libre Caslon Text";font-size:14px;line-height:1.55;color:#4A463D;
+  border-left:2px solid var(--gold);padding-left:16px}
+
+/* clauses */
+.clauses{flex:1;border-top:1.5px solid var(--ink)}
+.chead{display:grid;grid-template-columns:54px 1fr 1px 418px;align-items:center;height:28px;
+  font-family:"Archivo Narrow";font-weight:700;font-size:9.5px;letter-spacing:.22em;
+  text-transform:uppercase;color:#8A8578;border-bottom:1px solid var(--hair)}
+.chead .arh{text-align:right;font-family:"Noto Kufi Arabic";letter-spacing:0;font-size:11px}
+.cl{display:grid;grid-template-columns:54px 1fr 1px 418px;border-bottom:1px solid var(--hair);
+  padding:6px 0;min-height:54px}
+.cl .no{font-family:"Libre Franklin";font-weight:800;font-size:21px;color:var(--violet);
+  font-variant-numeric:tabular-nums}
+.cl .en{padding-right:34px}
+.cl .en h3{font-family:"Archivo Narrow";font-weight:700;font-size:16.5px;letter-spacing:.07em;
+  text-transform:uppercase;margin-bottom:6px}
+.cl .en p{font-family:"Libre Caslon Text";font-size:14px;line-height:1.5;color:#3E3A33;max-width:52ch}
+.cl .en .att{margin-top:7px;font-family:"Archivo Narrow";font-size:11px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--violet)}
+.cl .rule{background:var(--hair)}
+.cl .ar{padding-left:34px;direction:rtl;text-align:right}
+.cl .ar h3{font-family:"Noto Kufi Arabic";font-weight:700;font-size:17px;margin-bottom:9px}
+.bars span{display:block;height:7px;background:#E7E3DB;border-radius:1px;margin-bottom:7px}
+.bars span:nth-child(1){width:100%}.bars span:nth-child(2){width:86%}.bars span:nth-child(3){width:54%}
+.ar .pend{margin-top:9px;font-family:"Noto Kufi Arabic";font-size:11px;color:#9A9488}
+.cl.soon .en h3{color:#77726A}
+.cl.soon .en .att{color:#A8321E}
+
+/* execution */
+.exec{padding:10px 0 12px;display:flex;align-items:center;gap:34px;border-top:2px solid var(--ink)}
+.sigline{flex:1;position:relative;padding-top:18px;border-bottom:1.5px solid var(--ink)}
+.sigline .k{position:absolute;top:0;left:0;font-family:"Archivo Narrow";font-weight:700;font-size:10px;
+  letter-spacing:.22em;text-transform:uppercase;color:#8A8578}
+.sigline .cta{display:inline-flex;align-items:baseline;gap:16px;background:var(--gold);color:#1B1204;
+  font-family:"Archivo Narrow";font-weight:700;font-size:14px;letter-spacing:.13em;text-transform:uppercase;
+  padding:14px 24px;margin-bottom:9px;text-decoration:none}
+.sigline .cta .ar{font-family:"Noto Kufi Arabic";font-size:12px;letter-spacing:0;opacity:.6}
+.chop{width:96px;height:96px;border-radius:50%;border:2.5px solid var(--violet);color:var(--violet);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  transform:rotate(-9deg);opacity:.82;flex:none;position:relative}
+.chop::after{content:"";position:absolute;inset:7px;border:1px solid var(--violet);border-radius:50%;opacity:.65}
+.chop .a{font-family:"Noto Kufi Arabic";font-size:15px;font-weight:700}
+.chop .b{font-family:"Archivo Narrow";font-weight:700;font-size:9px;letter-spacing:.2em;text-transform:uppercase}
+.chop .c{font-family:"Archivo Narrow";font-size:8.5px;letter-spacing:.16em;text-transform:uppercase;opacity:.8}
+</style></head><body>
+<div class="pg">
+  <div class="title">
+    <div class="tb">
+      <img class="mark" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+      <img class="word" src="../../../../public/brand/wordmark-black-tight.svg" alt="Maghanim">
+    </div>
+    <div class="meta">Dubai · United Arab Emirates<br><span class="ar">مغانم</span></div>
+  </div>
+  <nav><a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+    <span class="sp"></span><span class="ar">العربية</span></nav>
+
+  <div class="subject">
+    <div>
+      <div class="k">Subject</div>
+      <h1>One platform.<br>One contract.<br><em>One relationship.</em></h1>
+    </div>
+    <div class="note">Payments, cards, business management and financing, set out as four clauses of a single agreement — each naming the institution that holds its licence.</div>
+  </div>
+
+  <div class="clauses">
+    <div class="chead"><span></span><span>Clause · English</span><span></span><span class="arh">البند · العربية</span></div>
+
+    <div class="cl"><div class="no">1</div>
+      <div class="en"><h3>Payments &amp; acceptance</h3>
+        <p>POS terminals, tap-to-phone, the online gateway, payment links and wallet acceptance — on one merchant record.</p>
+        <div class="att">Licence held by Arab Financial Services</div></div>
+      <div class="rule"></div>
+      <div class="ar"><h3>المدفوعات والقبول</h3><div class="bars"><span></span><span></span><span></span></div>
+        <div class="pend">قيد المراجعة اللغوية</div></div></div>
+
+    <div class="cl"><div class="no">2</div>
+      <div class="en"><h3>Cards &amp; spend</h3>
+        <p>Islamic cards, virtual cards, expense control, B2B travel settlement.</p>
+        <div class="att">Licence held by Mawarid Finance</div></div>
+      <div class="rule"></div>
+      <div class="ar"><h3>البطاقات والإنفاق</h3><div class="bars"><span></span><span></span><span></span></div>
+        <div class="pend">قيد المراجعة اللغوية</div></div></div>
+
+    <div class="cl"><div class="no">3</div>
+      <div class="en"><h3>Business management</h3>
+        <p>Accounting, payroll, CRM, inventory and HR, running on Odoo.</p>
+        <div class="att">Certified Odoo partner</div></div>
+      <div class="rule"></div>
+      <div class="ar"><h3>إدارة الأعمال</h3><div class="bars"><span></span><span></span><span></span></div>
+        <div class="pend">قيد المراجعة اللغوية</div></div></div>
+
+    <div class="cl soon"><div class="no">4</div>
+      <div class="en"><h3>Financing</h3>
+        <p>Shariah-compliant working capital.</p>
+        <div class="att">Coming soon</div></div>
+      <div class="rule"></div>
+      <div class="ar"><h3>التمويل</h3><div class="bars"><span></span><span></span><span></span></div>
+        <div class="pend">قيد المراجعة اللغوية</div></div></div>
+  </div>
+
+  <div class="exec">
+    <div class="sigline"><div class="k">Executed by</div>
+      <a class="cta" href="#">Request a meeting <span class="ar">تواصل معنا</span></a></div>
+    <div class="chop"><span class="a">مغانم</span><span class="b">Maghanim</span><span class="c">Dubai · U.A.E.</span></div>
+  </div>
+</div>
+</body></html>

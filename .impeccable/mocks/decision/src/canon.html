@@ -1,0 +1,91 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Archivo:wght@400;500;600&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--emerald:#0A3340;--emerald2:#0D404F;--gold:#BE973A;--goldl:#D4AF5A;--cream:#F5F0E8}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--emerald);color:var(--cream);font-family:"Archivo",system-ui,sans-serif;
+  display:flex;flex-direction:column;position:relative}
+.hero{position:absolute;inset:0;
+  background:radial-gradient(ellipse 86% 66% at 50% 26%,#11455571 0%,var(--emerald) 52%,#062430 100%),var(--emerald)}
+.pat{position:absolute;inset:0;opacity:.09;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'><g fill='none' stroke='%23BE973A' stroke-width='1.1'><path d='M80 0 L160 80 L80 160 L0 80 Z'/><path d='M80 26 L134 80 L80 134 L26 80 Z'/><rect x='38' y='38' width='84' height='84' transform='rotate(45 80 80)'/><rect x='38' y='38' width='84' height='84'/><circle cx='80' cy='80' r='30'/><path d='M0 0 L160 160 M160 0 L0 160'/></g></svg>");
+  -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 58%,transparent 92%)}
+.wrap{position:relative;z-index:2;flex:1;display:flex;flex-direction:column}
+
+header{height:84px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 58px}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img.mark{height:40px;display:block}
+.brand img.word{height:13px;display:block;margin-top:2px}
+nav{display:flex;align-items:center;gap:38px}
+nav a{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--cream);
+  text-decoration:none;opacity:.78;font-weight:500}
+nav a.on{opacity:1;color:var(--goldl);border-bottom:1.5px solid var(--goldl);padding-bottom:5px}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;opacity:.78;padding-left:26px;
+  border-left:1px solid rgba(245,240,232,.22)}
+
+.center{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+  padding-top:16px;text-align:center}
+.center img.mk{height:84px;display:block;margin-bottom:26px}
+.center h1{font-family:"Playfair Display";font-weight:500;font-size:58px;line-height:1.16;
+  letter-spacing:-.005em;max-width:17ch;color:var(--cream)}
+.center p{margin-top:22px;font-size:17px;line-height:1.7;color:rgba(245,240,232,.72);max-width:52ch}
+.cta{margin-top:34px;display:inline-flex;align-items:baseline;gap:16px;background:var(--gold);
+  color:var(--emerald);text-decoration:none;font-size:15px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;padding:18px 40px;border-radius:999px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3)}
+.cta .ar{font-family:"Noto Kufi Arabic";font-size:12px;letter-spacing:0;opacity:.55}
+
+.coinwrap{position:absolute;left:50%;bottom:-118px;transform:translateX(-50%);z-index:3}
+.coin{position:relative;width:330px;height:330px;transform:rotate(-6deg)}
+.coin .disc{position:absolute;inset:0;border-radius:50%;
+  background:
+    radial-gradient(ellipse 70% 60% at 33% 26%,#FBF0CE 0%,#EBD79A 18%,#D6B25C 44%,#B9903A 66%,#8C6B22 88%,#6E5219 100%);
+  box-shadow:0 26px 52px rgba(0,0,0,.52), inset 0 -10px 26px rgba(90,66,16,.55), inset 0 8px 20px rgba(255,246,214,.45)}
+.coin .mill{position:absolute;inset:0;border-radius:50%;overflow:hidden}
+.coin .mill::before{content:"";position:absolute;inset:0;border-radius:50%;
+  background:repeating-conic-gradient(from 0deg,#6E5219 0deg .7deg,#EFD79B .7deg 1.4deg)}
+.coin .mill::after{content:"";position:absolute;inset:13px;border-radius:50%;
+  background:radial-gradient(ellipse 70% 62% at 34% 27%,#FBF0CE 0%,#E9D294 22%,#D0A94F 52%,#AE8631 80%,#836316 100%);
+  box-shadow:0 0 0 1px rgba(110,82,25,.75), inset 0 3px 8px rgba(255,248,223,.55), inset 0 -6px 14px rgba(92,68,16,.5)}
+.coin .face{position:absolute;inset:34px;border-radius:50%;
+  border:2px solid rgba(122,93,29,.5);
+  box-shadow:inset 0 3px 7px rgba(96,71,18,.45),inset 0 -3px 7px rgba(255,247,219,.4),0 1px 0 rgba(255,248,220,.35)}
+.coin .mk{position:absolute;left:50%;top:50%;width:176px;transform:translate(-50%,-50%)}
+.coin .mk img{width:100%;display:block;position:absolute;left:0;top:0}
+.coin .mk img.sh{filter:brightness(.36) saturate(.55);transform:translate(3px,3.5px);opacity:.9}
+.coin .mk img.hi{filter:brightness(2.1) saturate(.3);transform:translate(-2px,-2.5px);opacity:1}
+.coin .mk img.bs{filter:brightness(1.12) saturate(.8);position:relative}
+.coin .gloss{position:absolute;inset:0;border-radius:50%;pointer-events:none;
+  background:linear-gradient(128deg,rgba(255,252,240,.5) 0%,rgba(255,255,255,0) 34%,rgba(255,255,255,0) 66%,rgba(255,244,214,.16) 100%)}
+.strip{position:absolute;left:0;right:0;bottom:0;height:26px;background:var(--cream);z-index:1}
+</style></head><body>
+<div class="hero"></div><div class="pat"></div>
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <img class="mark" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+      <img class="word" src="../../../../public/brand/wordmark-white-tight.svg" alt="Maghanim">
+    </div>
+    <nav><a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+      <span class="ar">العربية</span></nav>
+  </header>
+  <div class="center">
+    <img class="mk" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+    <h1>One platform for Shariah-compliant business</h1>
+    <p>Payments, cards, business management and financing for UAE small and medium enterprises — one contract, one relationship.</p>
+    <a class="cta" href="#">Request a meeting <span class="ar">تواصل معنا</span></a>
+  </div>
+</div>
+<div class="strip"></div>
+<div class="coinwrap"><div class="coin">
+  <div class="disc"></div><div class="mill"></div><div class="face"></div>
+  <div class="mk">
+    <img class="sh" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+    <img class="hi" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+    <img class="bs" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+  </div>
+  <div class="gloss"></div>
+</div></div>
+</body></html>

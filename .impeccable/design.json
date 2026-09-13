@@ -1,0 +1,271 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-12T00:00:00Z",
+  "title": "Design System: Maghanim",
+  "extensions": {
+    "colorMeta": {
+      "emerald-base": {
+        "role": "primary",
+        "displayName": "Authority Emerald",
+        "canonical": "#0B3328",
+        "tonalRamp": ["#04120E", "#072019", "#0B3328", "#124434", "#1B5A45", "#2E7F64", "#6FB49B", "#C3E0D5"]
+      },
+      "emerald-lit": {
+        "role": "primary",
+        "displayName": "Lit Emerald",
+        "canonical": "#124434",
+        "tonalRamp": ["#051710", "#092A20", "#0E372A", "#124434", "#1A5F49", "#278663", "#63B396", "#BEE0D2"]
+      },
+      "emerald-deep": {
+        "role": "primary",
+        "displayName": "Deep Emerald",
+        "canonical": "#072019",
+        "tonalRamp": ["#030C09", "#051610", "#072019", "#0B3328", "#104A39", "#1C6E55", "#4FA286", "#B4DBCB"]
+      },
+      "gold": {
+        "role": "secondary",
+        "displayName": "Ration Gold",
+        "canonical": "#BE973A",
+        "tonalRamp": ["#2C2109", "#4A3812", "#6B511B", "#8E6D26", "#BE973A", "#D4AF5A", "#E4CA8E", "#F3E7C8"]
+      },
+      "gold-light": {
+        "role": "secondary",
+        "displayName": "Hover Gold",
+        "canonical": "#D4AF5A",
+        "tonalRamp": ["#33260C", "#523E15", "#75581F", "#9A772B", "#C79A42", "#D4AF5A", "#E6CE95", "#F5EBCF"]
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "Working Cream",
+        "canonical": "#F5F0E8",
+        "tonalRamp": ["#26231D", "#3E3A32", "#5A554B", "#7B7568", "#A29B8C", "#C8C1B3", "#E4DED1", "#F5F0E8"]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Analytic Paper",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#262626", "#404040", "#5C5C5C", "#7D7D7D", "#A3A3A3", "#CCCCCC", "#EBEBEB", "#FFFFFF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Emerald Ink",
+        "canonical": "#0B3328",
+        "tonalRamp": ["#04120E", "#072019", "#0B3328", "#124434", "#1B5A45", "#2E7F64", "#6FB49B", "#C3E0D5"]
+      },
+      "body": {
+        "role": "neutral",
+        "displayName": "Reading Grey",
+        "canonical": "#3A3A3A",
+        "tonalRamp": ["#141414", "#242424", "#3A3A3A", "#525252", "#707070", "#969696", "#C2C2C2", "#EDEDED"]
+      },
+      "on-dark": {
+        "role": "neutral",
+        "displayName": "Cream on Emerald",
+        "canonical": "#F5F0E8",
+        "tonalRamp": ["#26231D", "#3E3A32", "#5A554B", "#7B7568", "#A29B8C", "#C8C1B3", "#E4DED1", "#F5F0E8"]
+      }
+    },
+    "typographyMeta": {
+      "display": {"displayName": "Display", "purpose": "Hero headline only, balanced, capped at 18ch."},
+      "headline": {"displayName": "Headline", "purpose": "Section H2s and interior page H1s, 14-26ch."},
+      "title": {"displayName": "Title", "purpose": "Pillar, step and partner names."},
+      "body": {"displayName": "Body", "purpose": "Running paragraphs at 42-62ch measure."},
+      "label": {"displayName": "Label", "purpose": "Form labels, partner attribution lines, step numbers, footer column headings, nav items."},
+      "display-ar": {"displayName": "Arabic Display", "purpose": "Amiri headings in the Arabic locale; looser leading, never letter-spaced."},
+      "body-ar": {"displayName": "Arabic Body", "purpose": "Noto Sans Arabic paragraphs at 2.05 leading, never letter-spaced."}
+    },
+    "shadows": [
+      {"name": "coin-drop", "value": "drop-shadow(0 26px 44px rgba(0,0,0,0.45))", "purpose": "The floating coin render only."},
+      {"name": "coin-contact", "value": "radial-gradient(ellipse, rgba(0,0,0,0.46), transparent 72%)", "purpose": "Ground shadow under the coin, compressed in sync with the float."},
+      {"name": "action-lift", "value": "0 14px 34px rgba(0,0,0,0.32)", "purpose": "The hero primary CTA on emerald. No other element takes a shadow."}
+    ],
+    "motion": [
+      {"name": "ease-entrance", "value": "cubic-bezier(0.22, 0.61, 0.36, 1)", "purpose": "Reveal rises and explorer panel cross-fades."},
+      {"name": "reveal", "value": "opacity 0->1, translateY 20px->0, 620ms, once, viewport margin -90px", "purpose": "Scroll entrance; disabled entirely under prefers-reduced-motion, with a noscript rule forcing [data-reveal] visible."},
+      {"name": "reveal-stagger", "value": "60-100ms per item", "purpose": "Caller-supplied delay across a group."},
+      {"name": "coin-float", "value": "translateY 0 -> -8px -> 0, 6s easeInOut, infinite", "purpose": "Coin buoyancy."},
+      {"name": "coin-tilt", "value": "rotate -2deg -> 2deg -> -2deg, 9s easeInOut, infinite", "purpose": "Deliberately off-period from the float so the two never lock into a bounce."},
+      {"name": "explorer-crossfade", "value": "opacity + 22px x-slide along the reading direction, 400ms; 150ms and no slide under reduced motion", "purpose": "Solution explorer panel change."},
+      {"name": "step-rail-draw", "value": "scaleX 0->1, 1.4s easeInOut, delay 150ms, origin reading-start (rtl:origin-right)", "purpose": "The gold step rail draws itself once on entry; full scale immediately under reduced motion."},
+      {"name": "tab-marker", "value": "scaleY 0->1, 300ms, origin center", "purpose": "Active tab's 2px gold bar."},
+      {"name": "header-lift", "value": "background-color 300ms to emerald-base/92 + backdrop-blur-md past 24px scroll", "purpose": "Header separation without a shadow."},
+      {"name": "button-lift", "value": "background-color + translateY(-1px), 200ms; cancelled under motion-reduce", "purpose": "Primary button hover."}
+    ],
+    "breakpoints": [
+      {"name": "sm", "value": "640px"},
+      {"name": "md", "value": "768px"},
+      {"name": "lg", "value": "1024px"},
+      {"name": "container", "value": "1400px"}
+    ],
+    "patternField": {
+      "mask": "/pattern/geo-alpha.png",
+      "utility": "pattern-field",
+      "tileSize": "420-560px",
+      "opacity": {"emerald": "0.08-0.095", "cream": "0.12", "footer-emboss": "0.55 at tint #1B4A3B on emerald-deep"},
+      "boundaryFade": {
+        "both": "linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent)",
+        "bottom": "linear-gradient(to bottom, #000 0%, #000 62%, transparent)",
+        "top": "linear-gradient(to bottom, transparent, #000 38%, #000 100%)"
+      }
+    },
+    "bilingual": {
+      "locales": ["en", "ar"],
+      "rule": "Logical properties only (start/end, ms/me, ps/pe, border-s). Directional motion flips by reading direction. The calligraphic mark and the coin never mirror.",
+      "arabicType": "Amiri display / Noto Sans Arabic body; letter-spacing: 0 !important; paragraphs 2.05 leading, headings 1.55."
+    },
+    "sectionRhythm": ["emerald (hero)", "cream (pillars)", "white (explorer)", "cream (steps)", "white (partners)", "emerald (governance)", "cream (contact)", "emerald-deep (footer)"]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single gold action per screen. Lift shadow only when it sits on emerald.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">REQUEST A MEETING</a>",
+      "css": ".ds-btn-primary { display: inline-block; background: #BE973A; color: #072019; padding: 1.15rem 2.5rem; border-radius: 9999px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.11em; text-decoration: none; box-shadow: 0 14px 34px rgba(0,0,0,0.32); transition: background-color 200ms, transform 200ms; } .ds-btn-primary:hover { background: #D4AF5A; transform: translateY(-1px); } .ds-btn-primary:focus-visible { outline: 2px solid #BE973A; outline-offset: 3px; border-radius: 9999px; } @media (prefers-reduced-motion: reduce) { .ds-btn-primary:hover { transform: none; } }"
+    },
+    {
+      "name": "Quiet Link on Emerald",
+      "kind": "button",
+      "refersTo": "link-quiet-on-dark",
+      "description": "The secondary action inside an emerald band: gold text on a half-opacity gold underline.",
+      "html": "<a class=\"ds-link-quiet\" href=\"#\">MORE ON GOVERNANCE</a>",
+      "css": ".ds-link-quiet { display: inline-block; color: #BE973A; border-bottom: 1px solid rgba(190,151,58,0.5); padding-bottom: 4px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.17em; text-decoration: none; transition: color 200ms, border-color 200ms; } .ds-link-quiet:hover { color: #D4AF5A; border-color: #D4AF5A; } .ds-link-quiet:focus-visible { outline: 2px solid #BE973A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Navigation Item",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Header nav on emerald. The active item is the only gold marker in the bar.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-link ds-nav-link--active\" href=\"#\" aria-current=\"page\">HOME</a><a class=\"ds-nav-link\" href=\"#\">SOLUTIONS</a><a class=\"ds-nav-link\" href=\"#\">GOVERNANCE</a><span class=\"ds-nav-lang\"><a class=\"ds-nav-link ds-nav-link--plain\" href=\"#\">العربية</a></span></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; gap: 36px; background: #0B3328; padding: 26px 32px; } .ds-nav-link { font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.2em; text-decoration: none; color: rgba(245,240,232,0.76); border-bottom: 1.5px solid transparent; padding-bottom: 6px; transition: color 200ms; } .ds-nav-link:hover { color: #F5F0E8; } .ds-nav-link--active { color: #D4AF5A; border-bottom-color: #D4AF5A; } .ds-nav-lang { border-inline-start: 1px solid rgba(245,240,232,0.22); padding-inline-start: 28px; } .ds-nav-link--plain { font-size: 13px; letter-spacing: normal; text-transform: none; border-bottom: none; } .ds-nav-link:focus-visible { outline: 2px solid #BE973A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Underline Field",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "The only input style in the system: tracked uppercase label over a hairline underline, gold on focus.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-email\">WORK EMAIL</label><input class=\"ds-field-input\" id=\"ds-email\" type=\"email\" /></div>",
+      "css": ".ds-field { max-width: 320px; } .ds-field-label { display: block; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.68rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.17em; color: rgba(11,51,40,0.72); } .ds-field-input { margin-top: 10px; width: 100%; background: transparent; border: 0; border-bottom: 1px solid rgba(11,51,40,0.22); padding: 12px 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 1rem; color: #0B3328; outline: none; transition: border-color 200ms; } .ds-field-input:hover { border-bottom-color: rgba(11,51,40,0.4); } .ds-field-input:focus { border-bottom-color: #BE973A; } .ds-field-input:focus-visible { outline: 2px solid #BE973A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Pillar Cell",
+      "kind": "card",
+      "refersTo": "partner-slot",
+      "description": "One cell of the ruled four-column pillar block: engraved icon, serif title, body, hairline attribution line. No shadow, no radius.",
+      "html": "<div class=\"ds-pillar\"><svg class=\"ds-pillar-icon\" viewBox=\"0 0 32 32\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.25\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><rect x=\"3\" y=\"7\" width=\"26\" height=\"18\" rx=\"1\"/><path d=\"M3 13h26M8 20h7\"/></svg><h3 class=\"ds-pillar-title\">Payments &amp; acceptance</h3><p class=\"ds-pillar-body\">Take payment in the shop, on the phone, online and by link.</p><span class=\"ds-pillar-attr\">ARAB FINANCIAL SERVICES</span></div>",
+      "css": ".ds-pillar { display: flex; flex-direction: column; max-width: 300px; padding: 36px 36px 36px 0; border-top: 1px solid rgba(11,51,40,0.12); border-bottom: 1px solid rgba(11,51,40,0.12); background: #F5F0E8; } .ds-pillar-icon { width: 36px; height: 36px; color: rgba(11,51,40,0.6); } .ds-pillar-title { margin: 24px 0 0; font-family: Marcellus, Georgia, serif; font-size: 1.32rem; font-weight: 500; line-height: 1.375; color: #0B3328; } .ds-pillar-body { margin: 12px 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.92rem; line-height: 1.66; color: #3A3A3A; } .ds-pillar-attr { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(11,51,40,0.12); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.66rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.17em; color: rgba(11,51,40,0.7); }"
+    },
+    {
+      "name": "Explorer Tab",
+      "kind": "chip",
+      "refersTo": "tab-rail-item",
+      "description": "Vertical tab rail row. The 2px gold bar at the reading-start edge is the only gold in the section.",
+      "html": "<div class=\"ds-tabs\" role=\"tablist\"><button class=\"ds-tab ds-tab--on\" role=\"tab\" aria-selected=\"true\"><span class=\"ds-tab-bar\" aria-hidden=\"true\"></span><span class=\"ds-tab-label\">Payments</span></button><button class=\"ds-tab\" role=\"tab\" aria-selected=\"false\"><span class=\"ds-tab-bar\" aria-hidden=\"true\"></span><span class=\"ds-tab-label\">Cards</span></button></div>",
+      "css": ".ds-tabs { display: flex; flex-direction: column; width: 280px; background: #FFFFFF; } .ds-tab { position: relative; border: 0; border-bottom: 1px solid rgba(11,51,40,0.12); background: transparent; padding: 20px 0; text-align: start; cursor: pointer; color: rgba(11,51,40,0.72); transition: color 200ms; } .ds-tab:first-child { border-top: 1px solid rgba(11,51,40,0.12); } .ds-tab:hover { color: #0B3328; } .ds-tab--on { color: #0B3328; } .ds-tab-bar { position: absolute; inset-block: 0; inset-inline-start: 0; width: 2px; background: #BE973A; transform: scaleY(0); transform-origin: center; transition: transform 300ms; } .ds-tab--on .ds-tab-bar { transform: scaleY(1); } .ds-tab-label { display: block; padding-inline-start: 20px; font-family: Marcellus, Georgia, serif; font-size: 1.05rem; font-weight: 500; } .ds-tab:focus-visible { outline: 2px solid #BE973A; outline-offset: 3px; }"
+    },
+    {
+      "name": "Step Node",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "One node of the five-step rail: gold dot ringed in cream over the drawn rail, tabular step number, serif label.",
+      "html": "<div class=\"ds-step\"><div class=\"ds-step-rail\" aria-hidden=\"true\"><span class=\"ds-step-rail-fill\"></span></div><span class=\"ds-step-dot\" aria-hidden=\"true\"></span><p class=\"ds-step-num\">01</p><h3 class=\"ds-step-label\">Onboard</h3><p class=\"ds-step-desc\">The company is set up once, on one contract.</p></div>",
+      "css": ".ds-step { position: relative; max-width: 240px; padding: 0 20px 0 0; background: #F5F0E8; } .ds-step-rail { position: absolute; inset-inline-start: 0; top: 7px; height: 2px; width: 100%; background: rgba(11,51,40,0.14); } .ds-step-rail-fill { position: absolute; inset: 0; background: #BE973A; transform-origin: left center; } .ds-step-dot { position: relative; display: block; height: 16px; width: 16px; border-radius: 9999px; border: 3px solid #F5F0E8; background: #BE973A; box-shadow: 0 0 0 1px rgba(190,151,58,0.4); } .ds-step-num { margin: 24px 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; font-variant-numeric: tabular-nums; color: rgba(11,51,40,0.7); } .ds-step-label { margin: 8px 0 0; font-family: Marcellus, Georgia, serif; font-size: 1.3rem; font-weight: 500; color: #0B3328; } .ds-step-desc { margin: 10px 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.92rem; line-height: 1.66; color: #3A3A3A; }"
+    },
+    {
+      "name": "Partner Reservation",
+      "kind": "card",
+      "refersTo": "partner-slot",
+      "description": "A labelled reservation where a partner logo will go. Never a fabricated logo.",
+      "html": "<div class=\"ds-partner\"><div class=\"ds-partner-slot\"><span>LOGO TO FOLLOW</span></div><p class=\"ds-partner-name\">Mawarid Finance</p><p class=\"ds-partner-role\">BANKING-AS-A-SERVICE PARTNER</p></div>",
+      "css": ".ds-partner { max-width: 280px; background: #FFFFFF; } .ds-partner-slot { display: flex; align-items: center; justify-content: center; aspect-ratio: 16 / 7; border: 1px solid rgba(11,51,40,0.12); background: rgba(245,240,232,0.55); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.2em; color: rgba(11,51,40,0.7); } .ds-partner-name { margin: 20px 0 0; font-family: Marcellus, Georgia, serif; font-size: 1.18rem; font-weight: 500; color: #0B3328; } .ds-partner-role { margin: 6px 0 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.13em; color: rgba(11,51,40,0.7); }"
+    },
+    {
+      "name": "Placeholder Note",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "An unfilled decision shown as one: start-edge rule, faint ink wash, never dressed as content.",
+      "html": "<p class=\"ds-placeholder\">[PLACEHOLDER: description of the Shariah oversight structure, pending confirmation of what may be named publicly]</p>",
+      "css": ".ds-placeholder { max-width: 520px; border-inline-start: 2px solid rgba(11,51,40,0.3); background: rgba(11,51,40,0.04); padding: 16px 20px; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.88rem; line-height: 1.7; color: rgba(11,51,40,0.75); }"
+    },
+    {
+      "name": "Pattern Field",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The geometric texture: a tintable alpha mask under 12% opacity, gradient-faded at the section boundary.",
+      "html": "<div class=\"ds-pattern\"><div class=\"ds-pattern-field\"></div></div>",
+      "css": ".ds-pattern { position: relative; height: 220px; background: #F5F0E8; overflow: hidden; -webkit-mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent); mask-image: linear-gradient(to bottom, transparent, #000 14%, #000 86%, transparent); } .ds-pattern-field { position: absolute; inset: 0; background-color: #BE973A; opacity: 0.12; -webkit-mask-image: url('/pattern/geo-alpha.png'); mask-image: url('/pattern/geo-alpha.png'); -webkit-mask-size: 420px; mask-size: 420px; -webkit-mask-repeat: repeat; mask-repeat: repeat; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Minted Instrument",
+    "overview": "Maghanim is the category's standard arrangement — emerald ground, gold calligraphic mark, Islamic geometry, display serif — built to a tolerance the category does not reach. Everything that usually carries decoration here carries structure instead: the pattern is a tintable alpha mask held under 12% and faded out at every seam, the rules are hairlines at 10-14% ink, the corners are square except where a pill is functionally a button, and gold is spent like metal rather than sprayed like paint. What reads as luxury is restraint plus precision, not ornament.\n\nThe page moves in dark-light-dark bands. Emerald is the authority register (hero, governance, footer, interior page headers), cream is the working register, white is the analytic register where tabs, features and partners are read. Each emerald field is a radial ellipse from emerald-lit at its centre through emerald-base to emerald-deep at the edges, so the dark is lit rather than flat. Type sets long and airy: body at 1.66-1.80 leading inside 42-62ch measures, headings balanced and capped at 14-26ch.\n\nThe system is bilingual by construction, not by translation. Every layout axis is logical (start/end, ms/me, ps/pe); the Arabic build mirrors genuinely, swaps into Amiri and Noto Sans Arabic, drops all letter-spacing, and rides a more generous leading. Only two things never mirror: the calligraphic mark and the coin.",
+    "keyCharacteristics": [
+      "Rationed gold, on four things and four states only",
+      "Pattern as texture: 8-9.5% on emerald, 12% on cream, always gradient-masked at boundaries",
+      "Flat and hairline-ruled; shadow only under the coin and the primary button",
+      "Square corners; pill only where the element is an action",
+      "Dark-light-dark section rhythm, radially lit emerald",
+      "Logical properties only; a genuine RTL mirror with its own type stack",
+      "Motion that carries meaning and vanishes entirely under reduced motion"
+    ],
+    "rules": [
+      {
+        "name": "The Gold Ration Rule",
+        "body": "Gold is a material, not a colour. It appears on exactly four surfaces — the calligraphic mark, the primary CTA, the active navigation marker, and the step dots/rail — plus three interaction states: the focus ring, the selection highlight, and the hover shift to gold-light. Everywhere else that a gold impulse arrives — section labels, icons, bullets, badges, numbers, partner slots, dividers — the answer is muted ink (ink/45 to ink/72) or on-dark at reduced opacity. This is the discipline the whole build rests on and the first thing a later edit will break: a single gold eyebrow or gold icon set converts a rationed system into the interchangeable category default.",
+        "section": "colors"
+      },
+      {
+        "name": "The Muted-Ink Floor Rule",
+        "body": "Small, tracked, uppercase text on cream or white is ink/70 or darker, never lighter. The floor is a contrast requirement (WCAG AA), and it is why this system's secondary text is muted ink rather than tinted gold. Lightening any of these to ink/50 for elegance is a regression, not a refinement.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lit-Dark Rule",
+        "body": "Emerald is never a flat fill at section scale. Each emerald field carries a radial ellipse — emerald-lit at the focal point, emerald-base mid, emerald-deep at the edges — so the ground has a centre.",
+        "section": "colors"
+      },
+      {
+        "name": "The Arabic Never Tracks Rule",
+        "body": "[lang=\"ar\"] * sets letter-spacing: 0 !important. Letter-spacing breaks Arabic joining, so no Arabic element — including uppercase-styled labels and nav — may carry tracking. Arabic paragraphs ride 2.05 leading and Arabic headings 1.55, both looser than their Latin counterparts.",
+        "section": "typography"
+      },
+      {
+        "name": "The Wordmark Is Artwork Rule",
+        "body": "The logo wordmark is served as SVG from public/brand/. It is never typeset in Marcellus or any other face, never recoloured, stretched or redrawn; only the gold/white/black -tight variants are used.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two-Shadow Rule",
+        "body": "Shadow belongs to objects with mass: the coin, and the one gold button that sits on emerald. Cards, panels, inputs, nav and the mobile menu never take a shadow — they take a hairline or a change of ground.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Pill-Means-Action Rule",
+        "body": "A rounded shape is a promise that something happens when you press it. Nothing decorative, informational or containing takes a radius.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep gold on the four surfaces and three states named in the Gold Ration Rule; reach for muted ink (ink/45-ink/72) or on-dark at reduced opacity for everything else.",
+      "Do hold small tracked uppercase text at ink/70 or darker on light grounds, and on-dark/66 or lighter-weight equivalents on emerald — the contrast floor is what forced this palette.",
+      "Do apply the pattern through the pattern-field utility with a token tint, under 12% opacity, and always with a boundary fade (both / top / bottom).",
+      "Do light every emerald field with the radial lit -> base -> deep ellipse.",
+      "Do write layout in logical properties only (start/end, ms/me, ps/pe, border-s), and flip directional motion by reading direction.",
+      "Do give every new animation a reduced-motion branch that removes it rather than slowing it, and a no-JS fallback if it gates content.",
+      "Do separate with a 1px hairline at ink/12 and a change of ground.",
+      "Do keep the mark and the coin unmirrored in Arabic, and serve the logo from the -tight SVG variants."
+    ],
+    "donts": [
+      "Don't add a second gold button to any page; one primary action per screen, in gold, is the whole rule.",
+      "Don't tint icons, bullets, section labels, numerals, badges or partner slots gold. The Islamic-fintech default is a gold-sprayed page; this system's value is that it isn't one.",
+      "Don't raise the pattern above 12%, drop the boundary fade, or scale the tile so a motif becomes legible against type.",
+      "Don't apply letter-spacing to Arabic, or use Latin leading values for Arabic text.",
+      "Don't use left/right, ml/mr, or pl/pr for layout anywhere.",
+      "Don't add shadows to cards, panels, inputs or nav — only the coin and the hero's gold button have mass.",
+      "Don't round anything that is not an action.",
+      "Don't invent a partner logo, a certification badge, a statistic or a scheme mark to fill a visual gap; the partner slot's labelled reservation and the bordered PlaceholderNote are the system's approved way to show an unfilled decision.",
+      "Don't let the header's scrolled state become opaque; translucency plus blur is how it separates."
+    ]
+  }
+}

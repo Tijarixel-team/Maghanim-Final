@@ -1,0 +1,126 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@400;600;700&family=Saira:wght@400;600;800&family=Noto+Kufi+Arabic:wght@400..700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--panel:#23272A;--panel2:#1B1F21;--label:#C8CCC7;--gold:#D4AF5A;--oxide:#A8321E;--groove:#0E1112}
+html,body{width:1600px;height:900px;overflow:hidden}
+body{background:var(--panel);color:var(--label);font-family:"Saira",system-ui,sans-serif;
+  display:flex;flex-direction:column;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.022) 0 1px,transparent 1px 3px),
+    linear-gradient(160deg,#2B2F32 0%,#1E2224 55%,#26292C 100%)}
+.bolt{position:absolute;width:11px;height:11px;border-radius:50%;
+  background:radial-gradient(circle at 35% 32%,#6E7476,#2A2E30 62%,#121516);
+  box-shadow:0 1px 0 rgba(255,255,255,.09), inset 0 -1px 1px rgba(0,0,0,.6)}
+
+.rail{height:74px;flex:none;display:flex;align-items:center;justify-content:space-between;
+  padding:0 44px;border-bottom:2px solid var(--groove);
+  box-shadow:0 1px 0 rgba(255,255,255,.06);position:relative;
+  background:linear-gradient(180deg,#2E3336,#232729)}
+.brand{display:flex;align-items:center;gap:15px}
+.brand img.mark{height:38px;display:block}
+.brand img.word{height:13px;display:block;margin-top:2px;opacity:.92}
+nav{display:flex;align-items:center;gap:10px}
+nav a{font-family:"Saira Condensed";font-weight:600;font-size:12px;letter-spacing:.19em;text-transform:uppercase;
+  color:var(--label);text-decoration:none;opacity:.62;padding:8px 15px;border-radius:2px;
+  background:linear-gradient(180deg,#22262800,#1A1E2055);border:1px solid rgba(0,0,0,.45);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05)}
+nav a.on{opacity:1;color:#151819;background:linear-gradient(180deg,#DCC07A,#C29B45);border-color:#8E7330}
+nav .ar{font-family:"Noto Kufi Arabic";font-size:13px;opacity:.62;margin-left:14px;
+  padding-left:18px;border-left:1px solid rgba(255,255,255,.13)}
+
+.head{padding:40px 44px 26px;display:grid;grid-template-columns:1fr 430px;gap:56px;align-items:end}
+.head .k{font-family:"Saira Condensed";font-weight:700;font-size:10.5px;letter-spacing:.26em;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px}
+.head h1{font-family:"Saira";font-weight:800;font-size:64px;line-height:.98;letter-spacing:-.02em;
+  text-transform:uppercase;color:#EDF0EC}
+.head h1 em{font-style:normal;color:var(--gold)}
+.head p{font-size:15px;line-height:1.65;color:#9AA09C;border-left:2px solid var(--oxide);padding-left:16px}
+
+.strip{height:420px;flex:none;display:grid;grid-template-columns:repeat(4,1fr);margin:0 44px 0;
+  border:1px solid var(--groove);border-radius:3px;overflow:hidden;
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.55),0 1px 0 rgba(255,255,255,.05);
+  background:linear-gradient(180deg,#252A2C,#1C2022)}
+.ch{position:relative;padding:24px 26px 26px;border-right:1px solid var(--groove);
+  box-shadow:1px 0 0 rgba(255,255,255,.05);display:flex;flex-direction:column}
+.ch:last-child{border-right:0;box-shadow:none}
+.ch .lampline{display:flex;align-items:center;gap:11px;margin-bottom:20px}
+.lamp{width:15px;height:15px;border-radius:50%;background:#14181A;border:1px solid #0B0E0F;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.9)}
+.lamp.on{background:radial-gradient(circle at 38% 34%,#F3DFA6,var(--gold) 58%,#8B6C22);
+  box-shadow:0 0 12px rgba(212,175,90,.55),inset 0 1px 1px rgba(255,255,255,.5)}
+.ch .num{font-family:"Saira Condensed";font-weight:700;font-size:11px;letter-spacing:.2em;color:#6E7570}
+.ch h2{font-family:"Saira Condensed";font-weight:700;font-size:26px;letter-spacing:.09em;
+  text-transform:uppercase;color:#E6E9E4;line-height:1.05;margin-bottom:10px}
+.ch .desc{font-size:13px;line-height:1.6;color:#8F958F;margin-bottom:18px}
+.ladder{display:flex;gap:4px;margin-bottom:22px}
+.spec{display:flex;flex-direction:column;gap:0}
+.spec div{display:flex;justify-content:space-between;gap:12px;padding:8px 0;
+  border-top:1px solid rgba(255,255,255,.055);font-family:"Saira Condensed";font-size:12px;
+  letter-spacing:.09em;text-transform:uppercase;color:#8F958F}
+.spec div b{font-weight:600;color:#C3C8C2}
+.spec div.dim b{color:#7E857F}
+.ladder i{display:block;width:9px;height:22px;border-radius:1px;background:#181C1E;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,.8)}
+.ladder i.lit{background:linear-gradient(180deg,#EBD494,var(--gold));box-shadow:0 0 7px rgba(212,175,90,.5)}
+.ch .att{margin-top:auto;padding-top:13px;border-top:1px solid rgba(255,255,255,.08);
+  font-family:"Saira Condensed";font-weight:600;font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:#7E857F}
+.ch.off h2{color:#7E857F}
+.ch.off .att{color:var(--oxide)}
+
+.foot{flex:1;display:flex;align-items:center;justify-content:space-between;
+  padding:0 44px;position:relative}
+.foot .fine{font-family:"Saira Condensed";font-size:11px;letter-spacing:.16em;text-transform:uppercase;
+  color:#7E857F;line-height:2}
+.key{display:flex;align-items:center;gap:20px;background:linear-gradient(180deg,#E2C888,#BE973A 62%,#A07D2A);
+  color:#1B1204;font-family:"Saira Condensed";font-weight:700;font-size:17px;letter-spacing:.15em;
+  text-transform:uppercase;padding:22px 30px;border-radius:3px;text-decoration:none;
+  border:1px solid #8E7330;box-shadow:0 5px 0 #6F5720,0 10px 18px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.5)}
+.key .ar{font-family:"Noto Kufi Arabic";font-size:13px;letter-spacing:0;opacity:.58}
+</style></head><body>
+<div class="rail">
+  <div class="brand">
+    <img class="mark" src="../../../../public/brand/mark-gold-tight.svg" alt="">
+    <img class="word" src="../../../../public/brand/wordmark-white-tight.svg" alt="Maghanim">
+  </div>
+  <nav><a class="on" href="#">Home</a><a href="#">Solutions</a><a href="#">Governance</a><a href="#">Contact</a>
+    <span class="ar">العربية</span></nav>
+</div>
+
+<div class="head">
+  <div>
+    <div class="k">One platform · four channels</div>
+    <h1>One panel.<br><em>Nothing hidden.</em></h1>
+  </div>
+  <p>Every service Maghanim runs, and the licensed institution behind it, engraved on the same surface. No tabs, no drawers, nothing to go looking for.</p>
+</div>
+
+<div class="strip">
+  <div class="ch"><div class="lampline"><span class="lamp on"></span><span class="num">CH 01</span></div>
+    <h2>Payments</h2><div class="desc">POS, tap-to-phone, online gateway, payment links, wallet acceptance.</div>
+    <div class="ladder"><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i></i><i></i></div>
+    <div class="spec"><div><span>Terminals</span><b>POS · TAP</b></div><div><span>Online</span><b>GATEWAY · LINKS</b></div><div><span>Wallets</span><b>ACCEPTED</b></div></div>
+    <div class="att">Arab Financial Services</div></div>
+  <div class="ch"><div class="lampline"><span class="lamp on"></span><span class="num">CH 02</span></div>
+    <h2>Cards</h2><div class="desc">Islamic cards, virtual cards, expense control, B2B travel settlement.</div>
+    <div class="ladder"><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i></i><i></i><i></i></div>
+    <div class="spec"><div><span>Issuing</span><b>ISLAMIC · VIRTUAL</b></div><div><span>Controls</span><b>PER EMPLOYEE</b></div><div><span>Travel</span><b>B2B SETTLE</b></div></div>
+    <div class="att">Mawarid Finance</div></div>
+  <div class="ch"><div class="lampline"><span class="lamp on"></span><span class="num">CH 03</span></div>
+    <h2>Business</h2><div class="desc">Accounting, payroll, CRM, inventory and HR on Odoo.</div>
+    <div class="ladder"><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i class="lit"></i><i></i></div>
+    <div class="spec"><div><span>Ledger</span><b>ACCOUNTS · VAT</b></div><div><span>People</span><b>PAYROLL · HR</b></div><div><span>Ops</span><b>CRM · STOCK</b></div></div>
+    <div class="att">Certified Odoo partner</div></div>
+  <div class="ch off"><div class="lampline"><span class="lamp"></span><span class="num">CH 04</span></div>
+    <h2>Financing</h2><div class="desc">Shariah-compliant working capital.</div>
+    <div class="ladder"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="spec"><div class="dim"><span>Structure</span><b>MURABAHA</b></div><div class="dim"><span>Tenor</span><b>—</b></div><div class="dim"><span>Status</span><b>IN PROGRESS</b></div></div>
+    <div class="att">Coming soon</div></div>
+</div>
+
+<div class="foot">
+  <div class="fine">Maghanim holds the relationship, the product design<br>and the Shariah governance · Dubai, United Arab Emirates</div>
+  <a class="key" href="#">Request a meeting <span class="ar">تواصل معنا</span></a>
+</div>
+</body></html>

@@ -1,0 +1,101 @@
+{
+  "tool": "build-phase",
+  "version": 2,
+  "startedAt": "2026-09-12T10:42:51.062Z",
+  "comp": ".impeccable/mocks/comp-a.png",
+  "direction": null,
+  "breakpoint": "2400x1350",
+  "artifact": null,
+  "phase": "spec",
+  "phases": {
+    "comps": {
+      "status": "skipped",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [
+        {
+          "at": "2026-09-12T10:42:51.062Z",
+          "text": "started with an approved comp; the comp round happened before this state (surface round or manual)"
+        }
+      ],
+      "gate": null,
+      "forced": null
+    },
+    "spec": {
+      "status": "open",
+      "openedAt": "2026-09-12T10:42:51.062Z",
+      "closedAt": null,
+      "attempts": 4,
+      "notes": [
+        {
+          "at": "2026-09-12T10:43:11.348Z",
+          "text": "Build ran comp-led but ahead of the phase machinery: comps and approval were produced and recorded (.impeccable/mocks/comp-a.png, approval in the surface brief) before build-phase was opened, so the measured spec/plate/hero-repro phases were never gated. State opened retroactively after the finish review. Fidelity was judged visually against comp-a.png plus a full finish review; GROUND was deliberately re-pinned from the comp's #0A3340 to #0B3328 on the client's explicit instruction (Concept 2 artwork), recorded as an amendment in the surface brief."
+        }
+      ],
+      "gate": {
+        "ok": false,
+        "reasons": [
+          "no spec at .impeccable/build/spec.json: run comp-spec.mjs --comp .impeccable/mocks/comp-a.png --grid, name the regions, then --regions regions.json"
+        ],
+        "at": "2026-09-12T10:43:11.424Z"
+      },
+      "forced": null
+    },
+    "plates": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "hero": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "sections": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "motion": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "responsive": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    },
+    "review": {
+      "status": "pending",
+      "openedAt": null,
+      "closedAt": null,
+      "attempts": 0,
+      "notes": [],
+      "gate": null,
+      "forced": null
+    }
+  },
+  "finish": null
+}
