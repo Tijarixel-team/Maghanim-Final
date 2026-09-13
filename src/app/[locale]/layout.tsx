@@ -34,7 +34,10 @@ const notoAr = Noto_Sans_Arabic({
   variable: '--font-noto-ar'
 });
 
-const SITE = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3210';
+// Vercel may expose an unset environment variable as an empty string. URL()
+// rejects that value, so normalize it before using it as the metadata origin.
+const configuredSite = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const SITE = configuredSite || 'http://localhost:3210';
 
 /** Unwritten copy must never reach a search result or a social card. */
 const written = (value: string) => (value.trim().startsWith('[') ? null : value);
@@ -75,7 +78,7 @@ export async function generateMetadata({
     // Nothing is indexed until this locale's copy is approved and a real origin
     // is configured. Set NEXT_PUBLIC_SITE_URL and approve the copy to publish.
     robots:
-      approved && process.env.NEXT_PUBLIC_SITE_URL
+      approved && configuredSite
         ? {index: true, follow: true}
         : {index: false, follow: false}
   };
