@@ -33,6 +33,34 @@ export function Hero() {
             {t('cta')}
           </ShinyButton>
         </div>
+
+        <div className="mt-[2.5rem] w-full">
+          <p className="text-center text-[0.6875rem] uppercase tracking-[0.14em] text-on-dark/40 mb-1">
+            In partnership with
+          </p>
+          <div className="flex flex-nowrap items-center justify-center gap-[clamp(18px,5.3vw,68px)]">
+            <img
+              src="/partners/hero/flocash.png"
+              alt="flocash"
+              className="h-[clamp(44px,13vw,68px)] w-auto flex-none opacity-[0.72]"
+            />
+            <img
+              src="/partners/hero/odoo.png"
+              alt="odoo"
+              className="h-[clamp(44px,13vw,68px)] w-auto flex-none opacity-[0.72]"
+            />
+            <img
+              src="/partners/hero/afs.png"
+              alt="afs"
+              className="h-[clamp(44px,13vw,68px)] w-auto flex-none opacity-[0.72]"
+            />
+            <img
+              src="/partners/hero/mawarid.png"
+              alt="mawarid"
+              className="h-[clamp(44px,13vw,68px)] w-auto flex-none opacity-[0.72]"
+            />
+          </div>
+        </div>
       </div>
 
       {/* The coin straddles the fold: half of it is below the first screen, so
