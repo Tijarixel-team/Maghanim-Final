@@ -20,7 +20,7 @@ export function Hero() {
       <div className="relative flex min-h-dvh flex-col items-center justify-center px-6 pb-[34vh] pt-[110px] text-center md:px-10">
         <Mark variant="gold" priority className="h-[68px] w-auto md:h-[84px]" />
 
-        <h1 className="mt-8 max-w-[182px] font-display text-[clamp(2.4rem,6.2vw,4.2rem)] font-bold leading-[1.1] tracking-[-0.014em] text-cream text-balance md:mt-10">
+        <h1 className="mt-8 max-w-[18ch] font-display text-[clamp(2.1rem,5.6vw,3.9rem)] leading-[1.16] tracking-[-0.012em] text-cream text-balance md:mt-10">
           {t('headline')}
         </h1>
 
@@ -66,7 +66,7 @@ export function Hero() {
       {/* The coin straddles the fold: half of it is below the first screen, so
           the page tells you there is more without a scroll cue to explain it.
           Nothing paints over it, and it never intercepts a click. */}
-      <div className="pointer-events-none absolute bottom-0 start-1/2 z-30 w-[380px] max-w-[72vw] -translate-x-1/2 translate-y-[35%] rtl:translate-x-1/2">
+      <div className="pointer-events-none absolute bottom-0 start-1/2 z-30 w-[380px] max-w-[72vw] -translate-x-1/2 translate-y-1/2 rtl:translate-x-1/2">
         <Coin alt={t('coinAlt')} />
       </div>
     </section>
