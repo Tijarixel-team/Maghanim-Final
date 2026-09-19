@@ -10,7 +10,7 @@ export function Contact() {
   const tf = useTranslations('footer');
 
   return (
-    <section id="contact" className="relative isolate overflow-hidden bg-cream py-24 md:py-32 scroll-mt-[84px]">
+    <section id="contact" className="relative isolate overflow-hidden bg-cream py-16 md:py-24 scroll-mt-[84px]">
       <Pattern tint="var(--color-gold)" opacity={0.12} size={420} fade="top" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
