@@ -65,7 +65,8 @@ export function LanguageSelector() {
       {open && (
         <div
           className={cn(
-            'absolute right-0 mt-2 w-40 rounded-lg overflow-hidden',
+            'absolute mt-2 w-40 rounded-lg overflow-hidden',
+            locale === 'ar' ? 'left-0' : 'right-0',
             'bg-white/95 dark:bg-neutral-900/95 backdrop-blur-xl',
             'shadow-lg border border-white/20 dark:border-neutral-700',
             'animate-fade-in z-50'
