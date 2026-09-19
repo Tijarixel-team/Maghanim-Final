@@ -118,6 +118,32 @@
     "intro": "Turn the dial. Maghanim carries the SME relationship and the Shariah governance; each regulated capability is supplied by the licensed institution named beneath it.",
     "next": "Next capability group"
   },
+  "why": {
+    "label": "WHY MAGHANIM",
+    "title": "Why Maghanim?",
+    "body": "UAE SMEs juggle multiple vendors for payments, cards, accounting and financing — each with its own contract, portal and support line. Maghanim replaces that patchwork with one integrated platform governed by independent Shariah oversight.",
+    "without": {
+      "badge": "WITHOUT MAGHANIM",
+      "heading": "Vendors that don't talk to each other.",
+      "points": [
+        "One provider for payments, another for cards, another for accounting",
+        "No unified reporting or reconciliation across vendors",
+        "Multiple contracts, multiple relationship managers",
+        "Shariah compliance checked vendor by vendor — if at all"
+      ]
+    },
+    "with": {
+      "badge": "WITH MAGHANIM",
+      "heading": "One platform, one contract, one relationship.",
+      "points": [
+        "Payments, cards, ERP and financing through a single integration",
+        "Consolidated reporting with transaction-level visibility",
+        "One contract, one relationship manager, one support channel",
+        "Independent Shariah governance across every product"
+      ]
+    },
+    "disclaimer": "Maghanim is the platform layer. Each regulated service is delivered by a licensed partner institution."
+  },
   "how": {
     "title": "How B2B travel settlement works",
     "body": "A five-step flow that replaces cash, deposits and guarantees with a controlled, single-use card payment.",

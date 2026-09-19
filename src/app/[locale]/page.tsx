@@ -2,8 +2,7 @@ import {setRequestLocale} from 'next-intl/server';
 import {Header} from '@/components/Header';
 import {Hero} from '@/components/Hero';
 import {Pillars} from '@/components/Pillars';
-import {SolutionExplorer} from '@/components/SolutionExplorer';
-import {HowItWorks} from '@/components/HowItWorks';
+import {WhyMaghanim} from '@/components/WhyMaghanim';
 import {Contact} from '@/components/Contact';
 import {Footer} from '@/components/Footer';
 
@@ -21,8 +20,7 @@ export default async function HomePage({
       <main id="main">
         <Hero />
         <Pillars />
-        <SolutionExplorer />
-        <HowItWorks />
+        <WhyMaghanim />
         <Contact />
       </main>
       <Footer />
