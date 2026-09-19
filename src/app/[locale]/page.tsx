@@ -4,8 +4,6 @@ import {Hero} from '@/components/Hero';
 import {Pillars} from '@/components/Pillars';
 import {SolutionExplorer} from '@/components/SolutionExplorer';
 import {HowItWorks} from '@/components/HowItWorks';
-import {Partners} from '@/components/Partners';
-import {Governance} from '@/components/Governance';
 import {Contact} from '@/components/Contact';
 import {Footer} from '@/components/Footer';
 
@@ -25,8 +23,6 @@ export default async function HomePage({
         <Pillars />
         <SolutionExplorer />
         <HowItWorks />
-        <Partners />
-        <Governance />
         <Contact />
       </main>
       <Footer />
