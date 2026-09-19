@@ -1,15 +1,15 @@
 'use client';
 
 import {useEffect, useState} from 'react';
-import {motion, AnimatePresence} from 'framer-motion';
+import {AnimatePresence, motion, useReducedMotion} from 'motion/react';
 
 export function WhatsAppButton() {
   const [visible, setVisible] = useState(false);
+  const reduced = useReducedMotion();
 
   useEffect(() => {
     const handleScroll = () => {
-      const heroSection = document.querySelector('[id=""][class*="z-20"]') ||
-                         document.querySelector('section:first-of-type');
+      const heroSection = document.querySelector('section:first-of-type');
 
       if (!heroSection) {
         setVisible(window.scrollY > 600);
@@ -32,21 +32,23 @@ export function WhatsAppButton() {
           href="https://wa.me/?text=Hello"
           target="_blank"
           rel="noopener noreferrer"
-          initial={{opacity: 0, x: -20}}
-          animate={{opacity: 1, x: 0}}
-          exit={{opacity: 0, x: -20}}
-          transition={{duration: 0.3}}
-          className="fixed start-6 bottom-6 z-40 flex items-center justify-center"
+          initial={reduced ? false : {opacity: 0, scale: 0.86}}
+          animate={{opacity: 1, scale: 1}}
+          exit={reduced ? {opacity: 0} : {opacity: 0, scale: 0.86}}
+          transition={{duration: reduced ? 0 : 0.24}}
+          className="group fixed end-6 bottom-6 z-40 flex h-[52px] w-[52px] items-center justify-center rounded-full text-cream transition-transform duration-200 hover:-translate-y-0.5 hover:scale-[1.04] motion-reduce:hover:translate-y-0 motion-reduce:hover:scale-100"
           aria-label="Contact us on WhatsApp"
         >
-          <div className="relative">
-            <div className="absolute inset-0 bg-[#25D366] rounded-full opacity-0 group-hover:opacity-20 transition-opacity" />
-            <button className="group relative flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-lg transition-all duration-200 hover:shadow-xl hover:scale-110">
-              <svg className="h-7 w-7 text-white" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.272-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.006c-1.105 0-2.153.474-2.851 1.302l-.18.223c-.625.767-1.004 1.755-1.004 2.782 0 2.192 1.784 3.975 3.975 3.975h.005c1.046 0 2.04-.408 2.778-1.146l.173-.173c.624-.625 1.004-1.504 1.004-2.656 0-2.192-1.784-3.975-3.975-3.975zm6.374-1.138C15.727 4.076 13.904 3.23 12 3.23c-3.859 0-7 3.14-7 7 0 1.24.31 2.411.857 3.433L3.83 20.97a1 1 0 001.232 1.233l7.28-1.885A6.999 6.999 0 0012 21.23c3.859 0 7-3.14 7-7 0-1.905-.846-3.727-2.325-4.945z" />
-              </svg>
-            </button>
-          </div>
+          <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-emerald-base shadow-[0_7px_18px_rgba(7,32,25,0.22)] transition-[background-color,box-shadow] duration-200 group-hover:bg-emerald-lit group-hover:shadow-[0_9px_22px_rgba(7,32,25,0.28)]">
+            <svg
+              aria-hidden="true"
+              className="h-6 w-6"
+              viewBox="0 0 16 16"
+              fill="currentColor"
+            >
+              <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.93 7.93 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93a7.898 7.898 0 0 0-2.327-5.607M7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.25a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.066-.315-.099-.445.099-.133.197-.513.646-.627.775-.116.133-.232.15-.43.05-.197-.099-.836-.308-1.592-.985-.59-.525-.986-1.173-1.102-1.37-.116-.198-.013-.305.086-.404.09-.088.197-.23.296-.345.1-.116.133-.198.198-.33.066-.132.033-.248-.017-.347-.05-.099-.445-1.075-.61-1.47-.16-.389-.323-.335-.445-.341-.114-.007-.247-.007-.379-.007s-.346.05-.527.248c-.182.198-.692.677-.692 1.654s.71 1.916.81 2.049c.098.132 1.398 2.137 3.39 2.997.474.204.842.326 1.129.418.475.152.907.129 1.25.079.38-.058 1.171-.48 1.338-.943.164-.463.164-.86.114-.943-.05-.082-.182-.132-.38-.23" />
+            </svg>
+          </span>
         </motion.a>
       )}
     </AnimatePresence>

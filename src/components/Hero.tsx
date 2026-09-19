@@ -29,13 +29,13 @@ export function Hero() {
         </p>
 
         <div className="mt-9">
-          <ShinyButton href="/contact" size="sm">
+          <ShinyButton href="/#contact" size="sm">
             {t('cta')}
           </ShinyButton>
         </div>
 
         <div className="mt-[2.5rem] w-full">
-          <p className="text-center text-[0.6875rem] uppercase tracking-[0.14em] text-on-dark/40 mb-1">
+          <p className="mb-1 text-center text-[0.6875rem] uppercase tracking-[0.14em] text-on-dark/70">
             In partnership with
           </p>
           <div className="flex flex-nowrap items-center justify-center gap-[clamp(18px,5.3vw,68px)]">

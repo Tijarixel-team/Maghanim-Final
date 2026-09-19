@@ -27,7 +27,7 @@ export function Pillars() {
             {PILLARS.map((key) => (
               <PillarCard
                 key={key}
-                icon={<PillarIcon name={key} className="h-6 w-6 text-teal-600" />}
+                icon={<PillarIcon name={key} className="h-7 w-7 text-on-dark/86" />}
                 title={t(`pillars.${key}.title`)}
                 description={t(`pillars.${key}.desc`)}
               />

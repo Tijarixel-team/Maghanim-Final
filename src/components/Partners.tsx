@@ -42,7 +42,7 @@ export function Partners() {
                     {t(`items.${key}.supplies`)}
                   </p>
                 </div>
-                <p className="text-[0.9rem] text-ink/60 md:text-end">{t(`items.${key}.status`)}</p>
+                <p className="text-[0.9rem] text-ink/70 md:text-end">{t(`items.${key}.status`)}</p>
               </div>
             </Reveal>
           ))}

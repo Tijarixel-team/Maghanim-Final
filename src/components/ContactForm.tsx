@@ -85,8 +85,13 @@ export function ContactForm() {
         className="sm:col-span-2"
       />
 
-      <div className="sm:col-span-2">
-        <ShinyButton type="submit" disabled={state === 'sending'}>
+      <div className="flex flex-col items-center sm:col-span-2">
+        <ShinyButton
+          type="submit"
+          size="sm"
+          className="shiny-cta--on-light"
+          disabled={state === 'sending'}
+        >
           {state === 'sending' ? t('sending') : t('submit')}
         </ShinyButton>
         {state === 'error' && (
@@ -144,7 +149,7 @@ function Field({
       >
         {label}
         {optional && (
-          <span className="ms-2 font-normal text-ink/55">
+          <span className="ms-2 font-normal text-ink/70">
             ({optional})
           </span>
         )}

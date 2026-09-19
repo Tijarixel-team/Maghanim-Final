@@ -1,7 +1,7 @@
 'use client';
 
 import {useEffect, useRef, useState} from 'react';
-import {useLocale, useTranslations} from 'next-intl';
+import {useTranslations} from 'next-intl';
 import {usePathname} from '@/i18n/navigation';
 import {Link} from '@/i18n/navigation';
 import {Mark, Wordmark} from './Mark';
@@ -10,12 +10,11 @@ import {clsx} from '@/lib/clsx';
 
 const LINKS = [
   {href: '/', key: 'home'},
-  {href: '/contact', key: 'contact'}
+  {href: '/#contact', key: 'contact'}
 ] as const;
 
 export function Header() {
   const t = useTranslations('nav');
-  const locale = useLocale();
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [lifted, setLifted] = useState(false);
@@ -41,8 +40,6 @@ export function Header() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [open]);
-
-  const other = locale === 'en' ? 'ar' : 'en';
 
   return (
     <header
@@ -73,10 +70,8 @@ export function Header() {
                 href={href}
                 aria-current={active ? 'page' : undefined}
                 className={clsx(
-                  'border-b-[1.5px] pb-1.5 text-xs font-medium uppercase tracking-[0.2em] transition-colors',
-                  active
-                    ? 'border-gold-light text-gold-light'
-                    : 'border-transparent text-on-dark/76 hover:text-on-dark'
+                  'nav-link pb-1.5 text-xs font-medium uppercase tracking-[0.2em]',
+                  active && 'nav-link--active'
                 )}
               >
                 {t(key)}
@@ -131,7 +126,7 @@ export function Header() {
             <Link
               key={key}
               href={href}
-              className="block border-b border-on-dark/10 py-4 text-sm uppercase tracking-[0.18em] text-on-dark/86"
+              className="nav-link flex border-b border-on-dark/10 py-4 text-sm uppercase tracking-[0.18em]"
             >
               {t(key)}
             </Link>

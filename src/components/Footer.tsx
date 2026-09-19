@@ -15,13 +15,13 @@ export function Footer() {
         <Wordmark variant="white" className="mt-8 h-[13px] w-auto opacity-85" />
 
         <p className="mt-7 text-[1rem] text-on-dark/78">{t('entity')}</p>
-        <p className="mt-1.5 text-[0.95rem] text-on-dark/60">{t('location')}</p>
+        <p className="mt-1.5 text-[0.95rem] text-on-dark/70">{t('location')}</p>
 
-        <p className="mt-9 max-w-[54ch] text-[0.92rem] leading-[1.7] text-on-dark/60">
+        <p className="mt-9 max-w-[54ch] text-[0.92rem] leading-[1.7] text-on-dark/70">
           {t('partners')}
         </p>
 
-        <p className="mt-14 text-[0.82rem] text-on-dark/50">
+        <p className="mt-14 text-[0.82rem] text-on-dark/66">
           © {year} {t('entity')}. {t('rights')}
         </p>
       </div>

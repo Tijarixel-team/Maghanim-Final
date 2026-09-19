@@ -2,7 +2,7 @@ import type {Metadata} from 'next';
 import {notFound} from 'next/navigation';
 import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
-import {Marcellus, Archivo, Amiri, Noto_Sans_Arabic} from 'next/font/google';
+import {Marcellus, Archivo, Noto_Kufi_Arabic, Noto_Sans_Arabic} from 'next/font/google';
 import {routing} from '@/i18n/routing';
 import {WhatsAppButton} from '@/components/WhatsAppButton';
 import '../globals.css';
@@ -21,11 +21,11 @@ const archivo = Archivo({
   variable: '--font-archivo'
 });
 
-const amiri = Amiri({
+const notoKufiAr = Noto_Kufi_Arabic({
   subsets: ['arabic'],
-  weight: ['400', '700'],
+  weight: ['400', '500', '600'],
   display: 'swap',
-  variable: '--font-amiri'
+  variable: '--font-noto-kufi'
 });
 
 const notoAr = Noto_Sans_Arabic({
@@ -102,7 +102,7 @@ export default async function LocaleLayout({
     <html
       lang={locale}
       dir={dir}
-      className={`${display.variable} ${archivo.variable} ${amiri.variable} ${notoAr.variable}`}
+      className={`${display.variable} ${archivo.variable} ${notoKufiAr.variable} ${notoAr.variable}`}
     >
       <head>
         {/* Scroll entrances must never be the reason content is missing. */}

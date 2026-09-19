@@ -57,7 +57,7 @@ export function Governance() {
         <Reveal delay={0.2}>
           <div className="mt-16 border-t border-on-dark/15 pt-9 md:flex md:items-end md:justify-between md:gap-12">
             <div className="max-w-[68ch]">
-              <p className="text-[0.92rem] text-on-dark/55">{t('engagementLabel')}</p>
+              <p className="text-[0.92rem] text-on-dark/70">{t('engagementLabel')}</p>
               <p className="mt-3 text-[1rem] leading-[1.75] text-on-dark/80">{t('engagement')}</p>
             </div>
             <Link

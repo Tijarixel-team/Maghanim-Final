@@ -22,13 +22,13 @@ export function PillarCard({icon, title, description}: PillarCardProps) {
       />
       <div className="relative flex flex-col gap-4 p-6 transition-shadow duration-200 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
         style={{boxShadow: '0 1px 3px rgba(0,0,0,0.08)'}}>
-        <div className="inline-flex h-14 w-14 items-center justify-center rounded-[12px] bg-on-dark/15">
+        <div className="inline-flex h-14 w-14 items-center justify-center border border-on-dark/15 bg-on-dark/[0.06]">
           {icon}
         </div>
-        <h3 className="font-display text-lg font-bold tracking-[-0.01em] text-cream">
+        <h3 className="font-display text-lg tracking-[-0.01em] text-cream">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-on-dark/72">
+        <p className="text-sm leading-relaxed text-on-dark/80">
           {description}
         </p>
       </div>

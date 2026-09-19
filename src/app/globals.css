@@ -21,7 +21,7 @@
 
   --font-display: var(--font-display-face), Georgia, "Times New Roman", serif;
   --font-sans:    var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
-  --font-ar-display: var(--font-amiri), "Geeza Pro", serif;
+  --font-ar-display: var(--font-noto-kufi), "Noto Kufi Arabic", sans-serif;
   --font-ar-sans:    var(--font-noto-ar), "Geeza Pro", sans-serif;
 }
 
@@ -42,7 +42,17 @@ body {
 /* Arabic never takes letter-spacing, and rides a more generous leading. */
 [lang="ar"] { font-family: var(--font-ar-sans); }
 [lang="ar"] * { letter-spacing: 0 !important; }
-[lang="ar"] p, [lang="ar"] li { line-height: 2.05; }
+[lang="ar"] p, [lang="ar"] li {
+  font-size: 1.0625rem;
+  line-height: 2.05;
+}
+[lang="ar"] label,
+[lang="ar"] input,
+[lang="ar"] textarea,
+[lang="ar"] button:not(.shiny-cta):not(.language-switch),
+[lang="ar"] a:not(.shiny-cta):not(.language-switch) {
+  font-size: 1rem;
+}
 [lang="ar"] h1, [lang="ar"] h2, [lang="ar"] h3 {
   font-family: var(--font-ar-display);
   line-height: 1.55;
@@ -56,6 +66,50 @@ body {
 }
 
 ::selection { background: var(--color-gold); color: var(--color-emerald-deep); }
+
+/* Header links draw the brand-gold rule from reading-start to reading-end. */
+.nav-link {
+  position: relative;
+  color: color-mix(in srgb, var(--color-on-dark) 76%, transparent);
+  transition: color 220ms ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  inset-inline: 0;
+  inset-block-end: 0;
+  height: 1.5px;
+  background: var(--color-gold-light);
+  scale: 0 1;
+  transform-origin: left center;
+  transition: scale 280ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+[dir="rtl"] .nav-link::after { transform-origin: right center; }
+
+.nav-link:is(:hover, :focus-visible),
+.nav-link--active {
+  color: var(--color-gold-light);
+}
+
+.nav-link:is(:hover, :focus-visible)::after,
+.nav-link--active::after {
+  scale: 1 1;
+}
+
+.language-switch[data-language="en"] {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em !important;
+}
+
+.language-switch[data-language="ar"] {
+  font-family: var(--font-ar-sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0 !important;
+}
 
 @utility tabular { font-variant-numeric: tabular-nums; }
 
@@ -87,6 +141,7 @@ body {
   --cta-fg:         var(--color-emerald-deep);
   --cta-highlight:  #FFF3D2;
   --cta-highlight-subtle: #FFFBF0;
+  --cta-inner-glow: #F3D98F;
   --animation: gradient-angle linear infinite;
   --duration: 3s;
   --shadow-size: 2px;
@@ -121,16 +176,24 @@ body {
     ) border-box;
   box-shadow: inset 0 0 0 1px var(--cta-bg-subtle), 0 12px 30px rgba(7, 32, 25, 0.3);
   transition: var(--transition);
-  transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine;
+  transition-property: --gradient-angle-offset, --gradient-percent, --gradient-shine, translate, scale, box-shadow;
 }
 
 .shiny-cta--sm { padding: 0.82rem 1.95rem; font-size: 0.82rem; }
 
+/* The contact form sits on paper, so its moving edge uses brand emerald
+   instead of the pale highlight used by the hero CTA on emerald. */
+.shiny-cta--on-light {
+  --cta-highlight: var(--color-emerald-deep);
+  --cta-highlight-subtle: var(--color-emerald-lit);
+  --gradient-shine: var(--color-emerald-deep);
+  --cta-inner-glow: #E8C86F;
+}
+
 .shiny-cta:disabled { opacity: 0.6; cursor: default; }
 
 .shiny-cta::before,
-.shiny-cta::after,
-.shiny-cta span::before {
+.shiny-cta::after {
   content: "";
   pointer-events: none;
   position: absolute;
@@ -138,6 +201,11 @@ body {
   inset-block-start: 50%;
   translate: -50% -50%;
   z-index: -1;
+}
+
+[dir="rtl"] .shiny-cta::before,
+[dir="rtl"] .shiny-cta::after {
+  translate: 50% -50%;
 }
 
 .shiny-cta:active { translate: 0 1px; }
@@ -167,22 +235,12 @@ body {
   --animation: shimmer linear infinite;
   width: 100%;
   aspect-ratio: 1;
-  background: linear-gradient(-50deg, transparent, var(--cta-highlight), transparent);
+  background: linear-gradient(-50deg, transparent, var(--cta-inner-glow), transparent);
   mask-image: radial-gradient(circle at bottom, transparent 40%, black);
   opacity: 0.55;
 }
 
 .shiny-cta span { position: relative; z-index: 1; }
-
-.shiny-cta span::before {
-  --size: calc(100% + 1rem);
-  width: var(--size);
-  height: var(--size);
-  box-shadow: inset 0 -1ex 2rem 4px var(--cta-highlight);
-  opacity: 0;
-  transition: opacity var(--transition);
-  animation: calc(var(--duration) * 1.5) breathe linear infinite;
-}
 
 .shiny-cta,
 .shiny-cta::before,
@@ -193,27 +251,27 @@ body {
 }
 
 .shiny-cta:is(:hover, :focus-visible) {
+  --cta-bg: var(--color-gold-light);
   --gradient-percent: 20%;
   --gradient-angle-offset: 95deg;
   --gradient-shine: var(--cta-highlight-subtle);
+  translate: 0 -2px;
+  scale: 1.025;
+  box-shadow: inset 0 0 0 1px var(--cta-bg-subtle), 0 18px 38px rgba(7, 32, 25, 0.38);
 }
 
 .shiny-cta:is(:hover, :focus-visible),
 .shiny-cta:is(:hover, :focus-visible)::before,
 .shiny-cta:is(:hover, :focus-visible)::after { animation-play-state: running; }
 
-.shiny-cta:is(:hover, :focus-visible) span::before { opacity: 1; }
-
 @keyframes gradient-angle { to { --gradient-angle: 360deg; } }
 @keyframes shimmer       { to { rotate: 360deg; } }
-@keyframes breathe       { from, to { scale: 1; } 50% { scale: 1.2; } }
 
 /* A visitor who asks for less motion gets a plain gold pill. */
 @media (prefers-reduced-motion: reduce) {
   .shiny-cta,
   .shiny-cta::before,
-  .shiny-cta::after,
-  .shiny-cta span::before { animation: none !important; }
+  .shiny-cta::after { animation: none !important; }
   .shiny-cta::after { opacity: 0; }
 }
 

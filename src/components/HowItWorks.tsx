@@ -26,7 +26,7 @@ export function HowItWorks() {
       <Pattern tint="var(--color-gold)" opacity={0.095} size={520} fade="both" />
 
       <div className="relative mx-auto max-w-[1240px] px-6 md:px-10">
-        <SectionHead title={t('title')} body={t('body')} align="center" />
+        <SectionHead title={t('title')} body={t('body')} align="center" tone="dark" />
 
         <ol ref={ref} className="relative mt-20 grid gap-y-14 md:grid-cols-5 md:gap-x-7">
           {/* One rail, running dot-centre to dot-centre, drawn once. */}
@@ -57,7 +57,7 @@ export function HowItWorks() {
                 aria-hidden
                 className="block h-[15px] w-[15px] rounded-full border-[3px] border-cream bg-gold"
               />
-              <p className="mt-6 text-[0.82rem] text-on-dark/55 tabular">
+              <p className="mt-6 text-[0.82rem] text-on-dark/70 tabular">
                 {String(i + 1).padStart(2, '0')}
               </p>
               <h3 className="mt-1.5 font-display text-[1.3rem] text-cream">
@@ -71,7 +71,7 @@ export function HowItWorks() {
         </ol>
 
         <div className="mx-auto mt-20 max-w-[86ch] border-t border-on-dark/15 pt-10 text-center">
-          <p className="text-[0.92rem] text-on-dark/55">{t('outcomeLabel')}</p>
+          <p className="text-[0.92rem] text-on-dark/70">{t('outcomeLabel')}</p>
           <p className="mt-4 text-[1.02rem] leading-[1.8] text-on-dark/80 text-pretty">{t('outcome')}</p>
         </div>
       </div>

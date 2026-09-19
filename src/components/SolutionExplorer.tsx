@@ -129,7 +129,7 @@ export function SolutionExplorer() {
                 className={clsx(
                   'absolute z-10 w-[7.6rem] font-display text-[1.02rem] leading-tight transition-colors duration-200',
                   SEAT[i],
-                  tab === active ? 'text-ink' : 'text-ink/45 hover:text-ink/80'
+                  tab === active ? 'text-ink' : 'text-ink/70 hover:text-ink'
                 )}
               >
                 {t(`${tab}.label`)}
@@ -170,7 +170,7 @@ export function SolutionExplorer() {
 
                 <p className="mt-7 text-[0.92rem] leading-[1.6] text-body">
                   {t('attribution')} <span className="text-ink">{partner}</span>
-                  {note && <span className="ms-3 text-ink/55">· {note}</span>}
+                  {note && <span className="ms-3 text-ink/70">· {note}</span>}
                 </p>
               </motion.div>
             </AnimatePresence>

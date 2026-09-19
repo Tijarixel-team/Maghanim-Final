@@ -217,14 +217,14 @@
     "engagement": "Engagement with AAOIFI, the Islamic Financial Services Board and CIBAFI on standards, governance practice and market development."
   },
   "contact": {
-    "title": "Start with one conversation",
-    "body": "Tell us what the business runs on today — the terminals, the cards, the accounting, whoever handles the financing. A relationship manager will come back to arrange a meeting.",
+    "title": "Talk to our team",
+    "body": "Tell us about your business and the services you need. A member of our team will contact you to understand your requirements and discuss the next steps.",
     "fields": {
       "name": "Full name",
       "company": "Company",
       "email": "Work email",
       "phone": "Phone",
-      "message": "What are you using today?"
+      "message": "How can we help?"
     },
     "optional": "Optional",
     "submit": "Get in contact",
@@ -261,7 +261,7 @@
       "placeholder": "[PLACEHOLDER: confirm the content of the Governance page — board composition, review cadence, and what may be named publicly]"
     },
     "contact": {
-      "title": "Start with one conversation"
+      "title": "Talk to our team"
     },
     "privacy": {
       "title": "Privacy Policy",
