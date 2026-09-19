@@ -2,7 +2,7 @@ import type {MetadataRoute} from 'next';
 import {routing} from '@/i18n/routing';
 
 const SITE = process.env.NEXT_PUBLIC_SITE_URL?.trim() || 'http://localhost:3210';
-const ROUTES = ['', '/solutions', '/governance', '/contact', '/privacy', '/terms'];
+const ROUTES = ['', '/contact', '/privacy', '/terms'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return ROUTES.flatMap((route) =>

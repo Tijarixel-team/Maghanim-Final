@@ -9,8 +9,6 @@ import {clsx} from '@/lib/clsx';
 
 const LINKS = [
   {href: '/', key: 'home'},
-  {href: '/solutions', key: 'solutions'},
-  {href: '/governance', key: 'governance'},
   {href: '/contact', key: 'contact'}
 ] as const;
 
