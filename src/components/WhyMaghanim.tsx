@@ -11,8 +11,8 @@ export function WhyMaghanim() {
   const withPoints = t.raw('with.points') as string[];
 
   return (
-    <section className="relative isolate overflow-hidden bg-cream py-16 scroll-mt-[84px] md:py-24">
-      <Pattern tint="var(--color-gold)" opacity={0.06} size={420} fade="both" />
+    <section className="relative isolate overflow-hidden bg-paper py-16 scroll-mt-[84px] md:py-24">
+      <Pattern tint="var(--color-gold)" opacity={0.15} size={420} fade="both" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">
         <Reveal>
@@ -30,9 +30,9 @@ export function WhyMaghanim() {
         </Reveal>
 
         <Reveal delay={0.12}>
-          <div className="mt-16 grid gap-6 md:grid-cols-2">
+          <div className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2">
             {/* ── WITHOUT card ─────────────────────────────────────────── */}
-            <div className="rounded-2xl border border-ink/8 bg-paper p-8 md:p-10">
+            <div className="rounded-2xl border border-ink/8 bg-cream p-6 sm:p-8 md:p-10">
               <span className="inline-block rounded-full border border-ink/12 bg-cream px-4 py-1.5 text-[0.75rem] font-semibold uppercase tracking-[0.16em] text-ink/70">
                 {t('without.badge')}
               </span>
@@ -52,7 +52,7 @@ export function WhyMaghanim() {
             </div>
 
             {/* ── WITH card ────────────────────────────────────────────── */}
-            <div className="relative isolate overflow-hidden rounded-2xl bg-emerald-base p-8 text-on-dark md:p-10">
+            <div className="relative isolate overflow-hidden rounded-2xl bg-emerald-base p-6 text-on-dark sm:p-8 md:p-10">
               <div
                 aria-hidden
                 className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_20%,var(--color-emerald-lit)_0%,var(--color-emerald-base)_60%,var(--color-emerald-deep)_100%)]"
@@ -82,7 +82,7 @@ export function WhyMaghanim() {
         </Reveal>
 
         <Reveal delay={0.2}>
-          <p className="mx-auto mt-10 max-w-[72ch] text-center text-[0.875rem] leading-[1.65] text-body/60">
+          <p className="mx-auto mt-8 max-w-[72ch] text-center text-[0.875rem] leading-[1.65] text-body/60 md:mt-10">
             {t('disclaimer')}
           </p>
         </Reveal>

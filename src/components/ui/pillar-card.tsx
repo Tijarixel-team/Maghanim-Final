@@ -2,6 +2,7 @@
 
 import {ReactNode} from 'react';
 import {motion} from 'framer-motion';
+import {Pattern} from '../Pattern';
 
 interface PillarCardProps {
   icon: ReactNode;
@@ -12,23 +13,24 @@ interface PillarCardProps {
 export function PillarCard({icon, title, description}: PillarCardProps) {
   return (
     <motion.div
-      whileHover={{y: -4}}
+      whileHover={{y: -3}}
       transition={{type: 'spring', stiffness: 400, damping: 30}}
-      className="group relative overflow-hidden rounded-lg"
+      className="group relative isolate h-full overflow-hidden rounded-2xl bg-emerald-base text-on-dark"
     >
       <div
         aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(ellipse_82%_64%_at_50%_26%,var(--color-emerald-lit)_0%,var(--color-emerald-base)_50%,var(--color-emerald-deep)_100%)]"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_90%_70%_at_50%_20%,var(--color-emerald-lit)_0%,var(--color-emerald-base)_60%,var(--color-emerald-deep)_100%)]"
       />
-      <div className="relative flex flex-col gap-4 p-6 transition-shadow duration-200 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
-        style={{boxShadow: '0 1px 3px rgba(0,0,0,0.08)'}}>
-        <div className="inline-flex h-14 w-14 items-center justify-center border border-on-dark/15 bg-on-dark/[0.06]">
+      <Pattern tint="var(--color-gold)" opacity={0.08} size={360} fade="both" />
+
+      <div className="relative flex h-full flex-col p-6 sm:p-8">
+        <div className="flex justify-center">
           {icon}
         </div>
-        <h3 className="font-display text-lg tracking-[-0.01em] text-cream">
+        <h3 className="mt-6 font-display text-lg tracking-[-0.01em] text-cream">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-on-dark/80">
+        <p className="mt-3 text-sm leading-relaxed text-on-dark/80">
           {description}
         </p>
       </div>
