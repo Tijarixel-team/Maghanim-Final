@@ -1,8 +1,8 @@
 import {useTranslations} from 'next-intl';
+import Image from 'next/image';
 import {Pattern} from './Pattern';
 import {Reveal} from './Reveal';
 import {SectionHead} from './SectionHead';
-import {PillarIcon} from './PillarIcon';
 import {FeatureShaderCards} from './ui/feature-shader-cards';
 
 const PILLARS = ['payments', 'cards', 'business', 'financing'] as const;
@@ -29,7 +29,16 @@ export function Pillars() {
                 key,
                 title: t(`pillars.${key}.title`),
                 description: t(`pillars.${key}.desc`),
-                icon: <PillarIcon name={key} className="h-9 w-9" />
+                icon: (
+                  <Image
+                    src={`/icons/${key}.png`}
+                    alt={t(`pillars.${key}.title`)}
+                    width={48}
+                    height={48}
+                    className="h-12 w-12"
+                    priority={false}
+                  />
+                )
               }))}
             />
           </div>

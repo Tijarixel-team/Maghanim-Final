@@ -48,7 +48,10 @@ export function FeatureShaderCards({cards}: {cards: ShaderCard[]}) {
   return (
     <ul ref={ref} className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
       {cards.map((card, i) => (
-        <li key={card.key} className="relative min-h-[19rem]">
+        <li
+          key={card.key}
+          className="group relative min-h-[16rem] transition-transform duration-300 hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+        >
           <div className="absolute inset-0 overflow-hidden rounded-3xl bg-emerald-deep">
             {live && (
               <Warp
@@ -68,9 +71,11 @@ export function FeatureShaderCards({cards}: {cards: ShaderCard[]}) {
             )}
           </div>
 
-          <article className="relative z-10 flex h-full flex-col rounded-3xl border border-cream/15 bg-[linear-gradient(180deg,rgba(4,22,15,0.20),rgba(4,22,15,0.76))] p-8">
-            <div className="text-cream/80">{card.icon}</div>
-            <h3 className="mt-7 font-display text-[1.3rem] leading-snug text-cream">
+          <article className="relative z-10 flex h-full flex-col rounded-3xl border border-cream/15 bg-[linear-gradient(180deg,rgba(4,22,15,0.20),rgba(4,22,15,0.76))] p-8 transition-colors duration-300 group-hover:border-cream/25">
+            <div className="flex size-12 items-center justify-center">
+              {card.icon}
+            </div>
+            <h3 className="mt-6 font-display text-[1.3rem] leading-snug text-cream">
               {card.title}
             </h3>
             <p className="mt-3 text-[0.95rem] leading-[1.7] text-on-dark/78">
