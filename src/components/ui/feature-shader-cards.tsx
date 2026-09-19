@@ -72,9 +72,7 @@ export function FeatureShaderCards({cards}: {cards: ShaderCard[]}) {
           </div>
 
           <article className="relative z-10 flex h-full flex-col rounded-3xl border border-cream/15 bg-[linear-gradient(180deg,rgba(4,22,15,0.20),rgba(4,22,15,0.76))] p-8 transition-colors duration-300 group-hover:border-cream/25">
-            <div className="flex justify-center">
-              {card.icon}
-            </div>
+            <div className="text-cream/80">{card.icon}</div>
             <h3 className="mt-8 font-display text-[1.3rem] leading-snug text-cream">
               {card.title}
             </h3>
