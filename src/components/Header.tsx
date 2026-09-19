@@ -5,6 +5,7 @@ import {useLocale, useTranslations} from 'next-intl';
 import {usePathname} from '@/i18n/navigation';
 import {Link} from '@/i18n/navigation';
 import {Mark, Wordmark} from './Mark';
+import {LanguageSelector} from './ui/language-selector';
 import {clsx} from '@/lib/clsx';
 
 const LINKS = [
@@ -83,15 +84,9 @@ export function Header() {
             );
           })}
 
-          <Link
-            href={pathname}
-            locale={other}
-            hrefLang={other}
-            aria-label={t('switchLabel')}
-            className="ms-2 border-s border-on-dark/22 ps-7 text-[13px] text-on-dark/76 transition-colors hover:text-on-dark"
-          >
-            {t('switchTo')}
-          </Link>
+          <div className="ms-2 border-s border-on-dark/22 ps-7">
+            <LanguageSelector />
+          </div>
         </nav>
 
         <button
@@ -141,15 +136,9 @@ export function Header() {
               {t(key)}
             </Link>
           ))}
-          <Link
-            href={pathname}
-            locale={other}
-            hrefLang={other}
-            aria-label={t('switchLabel')}
-            className="mt-5 inline-block text-sm text-gold-light"
-          >
-            {t('switchTo')}
-          </Link>
+          <div className="mt-5">
+            <LanguageSelector />
+          </div>
         </nav>
       </div>
     </header>
