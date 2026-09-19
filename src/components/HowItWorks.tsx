@@ -17,9 +17,13 @@ export function HowItWorks() {
   return (
     <section
       id="how"
-      className="relative isolate overflow-hidden bg-cream py-24 scroll-mt-[84px] md:py-32"
+      className="relative isolate overflow-hidden bg-emerald-base text-on-dark py-24 scroll-mt-[84px] md:py-32"
     >
-      <Pattern tint="var(--color-gold)" opacity={0.12} size={420} fade="both" />
+      <div
+        aria-hidden
+        className="absolute inset-0 overflow-hidden bg-[radial-gradient(ellipse_82%_64%_at_50%_26%,var(--color-emerald-lit)_0%,var(--color-emerald-base)_50%,var(--color-emerald-deep)_100%)]"
+      />
+      <Pattern tint="var(--color-gold)" opacity={0.095} size={520} fade="both" />
 
       <div className="relative mx-auto max-w-[1240px] px-6 md:px-10">
         <SectionHead title={t('title')} body={t('body')} align="center" />
@@ -53,22 +57,22 @@ export function HowItWorks() {
                 aria-hidden
                 className="block h-[15px] w-[15px] rounded-full border-[3px] border-cream bg-gold"
               />
-              <p className="mt-6 text-[0.82rem] text-ink/55 tabular">
+              <p className="mt-6 text-[0.82rem] text-on-dark/55 tabular">
                 {String(i + 1).padStart(2, '0')}
               </p>
-              <h3 className="mt-1.5 font-display text-[1.3rem] text-ink">
+              <h3 className="mt-1.5 font-display text-[1.3rem] text-cream">
                 {t(`steps.${step}.label`)}
               </h3>
-              <p className="mt-2.5 max-w-[24ch] text-[0.93rem] leading-[1.65] text-body">
+              <p className="mt-2.5 max-w-[24ch] text-[0.93rem] leading-[1.65] text-on-dark/80">
                 {t(`steps.${step}.desc`)}
               </p>
             </motion.li>
           ))}
         </ol>
 
-        <div className="mx-auto mt-20 max-w-[86ch] border-t border-ink/15 pt-10 text-center">
-          <p className="text-[0.92rem] text-ink/55">{t('outcomeLabel')}</p>
-          <p className="mt-4 text-[1.02rem] leading-[1.8] text-body text-pretty">{t('outcome')}</p>
+        <div className="mx-auto mt-20 max-w-[86ch] border-t border-on-dark/15 pt-10 text-center">
+          <p className="text-[0.92rem] text-on-dark/55">{t('outcomeLabel')}</p>
+          <p className="mt-4 text-[1.02rem] leading-[1.8] text-on-dark/80 text-pretty">{t('outcome')}</p>
         </div>
       </div>
     </section>
