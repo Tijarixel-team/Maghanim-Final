@@ -14,17 +14,21 @@ export function PillarCard({icon, title, description}: PillarCardProps) {
     <motion.div
       whileHover={{y: -4}}
       transition={{type: 'spring', stiffness: 400, damping: 30}}
-      className="group"
+      className="group relative overflow-hidden rounded-lg"
     >
-      <div className="flex flex-col gap-4 rounded-lg border border-[#E8E8E8] bg-white p-6 transition-shadow duration-200 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.08)]"
-        style={{boxShadow: '0 1px 3px rgba(0,0,0,0.05)'}}>
-        <div className="inline-flex h-14 w-14 items-center justify-center rounded-[12px] bg-teal-100">
+      <div
+        aria-hidden
+        className="absolute inset-0 bg-[radial-gradient(ellipse_82%_64%_at_50%_26%,var(--color-emerald-lit)_0%,var(--color-emerald-base)_50%,var(--color-emerald-deep)_100%)]"
+      />
+      <div className="relative flex flex-col gap-4 p-6 transition-shadow duration-200 group-hover:shadow-[0_4px_12px_rgba(0,0,0,0.12)]"
+        style={{boxShadow: '0 1px 3px rgba(0,0,0,0.08)'}}>
+        <div className="inline-flex h-14 w-14 items-center justify-center rounded-[12px] bg-on-dark/15">
           {icon}
         </div>
-        <h3 className="font-display text-lg font-bold tracking-[-0.01em] text-[#0B0B0B]">
+        <h3 className="font-display text-lg font-bold tracking-[-0.01em] text-cream">
           {title}
         </h3>
-        <p className="text-sm leading-relaxed text-[#6B6B6B]">
+        <p className="text-sm leading-relaxed text-on-dark/72">
           {description}
         </p>
       </div>
