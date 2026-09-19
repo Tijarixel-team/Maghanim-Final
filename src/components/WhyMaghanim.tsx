@@ -11,7 +11,7 @@ export function WhyMaghanim() {
   const withPoints = t.raw('with.points') as string[];
 
   return (
-    <section className="relative isolate overflow-hidden bg-cream py-24 scroll-mt-[84px] md:py-32">
+    <section className="relative isolate overflow-hidden bg-cream py-16 scroll-mt-[84px] md:py-24">
       <Pattern tint="var(--color-gold)" opacity={0.06} size={420} fade="both" />
 
       <div className="relative mx-auto max-w-[1400px] px-6 md:px-10">

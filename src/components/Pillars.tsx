@@ -13,7 +13,7 @@ export function Pillars() {
   return (
     <section
       id="platform"
-      className="relative isolate overflow-hidden bg-cream pb-24 pt-[23vh] scroll-mt-[84px] md:pb-32"
+      className="relative isolate overflow-hidden bg-cream py-16 scroll-mt-[84px] md:py-24"
     >
       <Pattern tint="var(--color-gold)" opacity={0.12} size={420} fade="both" />
 
