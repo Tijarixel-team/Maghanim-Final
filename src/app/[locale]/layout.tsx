@@ -4,6 +4,7 @@ import {hasLocale, NextIntlClientProvider} from 'next-intl';
 import {getTranslations, setRequestLocale} from 'next-intl/server';
 import {Marcellus, Archivo, Amiri, Noto_Sans_Arabic} from 'next/font/google';
 import {routing} from '@/i18n/routing';
+import {WhatsAppButton} from '@/components/WhatsAppButton';
 import '../globals.css';
 
 const display = Marcellus({
@@ -110,7 +111,10 @@ export default async function LocaleLayout({
         </noscript>
       </head>
       <body>
-        <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <NextIntlClientProvider>
+          {children}
+          <WhatsAppButton />
+        </NextIntlClientProvider>
       </body>
     </html>
   );
