@@ -29,7 +29,7 @@ export function WhatsAppButton() {
     <AnimatePresence>
       {visible && (
         <motion.a
-          href="https://wa.me/?text=Hello"
+          href="https://wa.me/971558838551?text=Hello"
           target="_blank"
           rel="noopener noreferrer"
           initial={reduced ? false : {opacity: 0, scale: 0.86}}
