@@ -8,10 +8,10 @@ import {ShinyButton} from './ui/shiny-button';
 type State = 'idle' | 'sending' | 'sent' | 'error';
 
 const FIELDS = [
-  {name: 'name', type: 'text', required: true, autoComplete: 'name'},
-  {name: 'company', type: 'text', required: true, autoComplete: 'organization'},
-  {name: 'email', type: 'email', required: true, autoComplete: 'email'},
-  {name: 'phone', type: 'tel', required: false, autoComplete: 'tel'}
+  {name: 'name', type: 'text', required: true, autoComplete: 'name', maxLength: 100},
+  {name: 'company', type: 'text', required: true, autoComplete: 'organization', maxLength: 160},
+  {name: 'email', type: 'email', required: true, autoComplete: 'email', maxLength: 254},
+  {name: 'phone', type: 'tel', required: false, autoComplete: 'tel', maxLength: 50}
 ] as const;
 
 export function ContactForm() {
@@ -70,6 +70,7 @@ export function ContactForm() {
           type={f.type}
           required={f.required}
           autoComplete={f.autoComplete}
+          maxLength={f.maxLength}
           label={t(`fields.${f.name}`)}
           optional={f.required ? undefined : t('optional')}
           error={errors[f.name]}
@@ -80,6 +81,7 @@ export function ContactForm() {
         name="message"
         as="textarea"
         required
+        maxLength={5000}
         label={t('fields.message')}
         error={errors.message}
         className="sm:col-span-2"
@@ -113,7 +115,8 @@ function Field({
   className,
   type = 'text',
   required,
-  autoComplete
+  autoComplete,
+  maxLength
 }: {
   name: string;
   label: string;
@@ -124,6 +127,7 @@ function Field({
   type?: string;
   required?: boolean;
   autoComplete?: string;
+  maxLength?: number;
 }) {
   const control = clsx(
     'mt-2.5 w-full border bg-paper px-4 py-3.5 text-[1rem] text-ink outline-none transition-colors',
@@ -136,6 +140,7 @@ function Field({
     name,
     required,
     autoComplete,
+    maxLength,
     'aria-invalid': error ? true : undefined,
     'aria-describedby': error ? `${name}-error` : undefined,
     className: control

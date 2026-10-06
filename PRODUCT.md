@@ -76,7 +76,7 @@ The defensible position is that combination: one commercial relationship spannin
 
 Also never show card scheme logos (Visa, Mastercard, Apple Pay and the like), unconfirmed partners, or any bank or partner not named above. Roadmap items are labelled "Coming soon" / "قريبًا", or omitted.
 
-**Conversion.** The contact form is the single conversion point the site exists to feed. It needs server-side validation, spam protection, and success and error states in both languages. Field list and submission destination are undecided.
+**Conversion.** The contact form is the single conversion point the site exists to feed. It has server-side validation, honeypot spam protection, and success and error states in both languages. Submissions are delivered through Resend to `F.alabdooli@maghanim.ae`.
 
 **Explicitly undecided product facts — record, do not invent:**
 
@@ -85,7 +85,7 @@ Also never show card scheme logos (Visa, Mastercard, Apple Pay and the like), un
 - Solutions as one page with four sections or four separate pages;
 - what content the Governance page carries;
 - which social platforms appear in the footer;
-- contact form fields and submission destination.
+- contact form fields.
 
 ## Brand Commitments
 
